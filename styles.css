@@ -2039,7 +2039,7 @@ button {
   width: clamp(240px, 22vw, 300px);
   max-width: 100%;
   gap: 4px;
-  margin-top: 110px;
+  margin-top: 130px;
 }
 
 .hp-hero .hp-hero-actions .hp-hero-cta {
