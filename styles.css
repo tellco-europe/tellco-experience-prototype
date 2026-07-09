@@ -1977,7 +1977,7 @@ button {
 
 .hp-hero .hp-hero-content {
   position: absolute;
-  left: clamp(48px, 9.5vw, 170px);
+  left: calc(clamp(48px, 9.5vw, 170px) - 15px);
   top: clamp(90px, 22%, 150px);
   width: min(920px, calc(100% - clamp(96px, 19vw, 340px)));
   max-width: 920px;
@@ -2038,8 +2038,8 @@ button {
   align-items: stretch;
   width: clamp(240px, 22vw, 300px);
   max-width: 100%;
-  gap: 14px;
-  margin-top: 70px;
+  gap: 4px;
+  margin-top: 90px;
 }
 
 .hp-hero .hp-hero-actions .hp-hero-cta {
@@ -2060,7 +2060,7 @@ button {
 
 @media (max-width: 1199px) {
   .hp-hero .hp-hero-content {
-    left: clamp(32px, 6vw, 72px);
+    left: calc(clamp(32px, 6vw, 72px) - 15px);
     top: clamp(80px, 20%, 120px);
     width: calc(100% - 96px);
   }
@@ -2106,7 +2106,7 @@ button {
   }
 
   .hp-hero .hp-hero-content {
-    left: 24px;
+    left: 9px;
     top: 72px;
     width: calc(100% - 48px);
   }
