@@ -2325,7 +2325,7 @@ button {
   padding-top: clamp(48px, 5vw, 72px);
 }
 
-#products {
+.hp-products-band {
   background: #ffffff;
 }
 
