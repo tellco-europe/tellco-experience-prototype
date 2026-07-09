@@ -2317,6 +2317,9 @@ button {
   padding-top: clamp(72px, 8vw, 108px);
   padding-bottom: clamp(72px, 8vw, 108px);
 }
+#partner-tracks > .hp-solutions-group:first-child {
+  padding-top: clamp(48px, 5vw, 72px);
+}
 
 .hp-industry-band {
   background: var(--surface);
