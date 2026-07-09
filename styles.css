@@ -1926,7 +1926,7 @@ button {
 
 .hp-intro-benefits-image {
   background: #ffffff;
-  padding: 47px 0 72px;
+  padding: 22px 0 72px;
 }
 
 .hp-intro-benefits-image__asset {
@@ -1938,13 +1938,13 @@ button {
 
 @media (max-width: 900px) {
   .hp-intro-benefits-image {
-    padding: 32px 0 48px;
+    padding: 16px 0 48px;
   }
 }
 
 @media (max-width: 600px) {
   .hp-intro-benefits-image {
-    padding: 24px 0 36px;
+    padding: 12px 0 36px;
   }
 }
 
@@ -2323,6 +2323,10 @@ button {
 }
 #partner-tracks > .hp-solutions-group:first-child {
   padding-top: clamp(48px, 5vw, 72px);
+}
+
+#products {
+  background: #ffffff;
 }
 
 .hp-industry-band {
