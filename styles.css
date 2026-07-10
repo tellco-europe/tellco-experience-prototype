@@ -4750,7 +4750,7 @@ button {
 }
 
 .homepage-last-banner {
-  padding: 0 0 clamp(32px, 4vw, 56px);
+  padding: 0;
   background: #ffffff;
 }
 
