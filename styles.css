@@ -173,6 +173,12 @@ button {
   max-height: 72px;
   object-fit: contain;
 }
+@media (min-width: 781px) {
+  .topbar-inner .social-links,
+  .nav-shell .brand {
+    transform: translateX(-48px);
+  }
+}
 
 .primary-nav {
   margin-left: auto;
