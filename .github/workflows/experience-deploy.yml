@@ -1,0 +1,39 @@
+name: Deploy Experience Prototype to Bluehost
+
+on:
+  push:
+    branches:
+      - main
+      # change this to your actual deploy branch name if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Bluehost via SSH/SFTP
+        env:
+          BLUEHOST_HOST: ${{ secrets.BLUEHOST_HOST }}
+          BLUEHOST_USER: ${{ secrets.BLUEHOST_USER }}
+          BLUEHOST_PORT: ${{ secrets.BLUEHOST_PORT }}
+          BLUEHOST_SSH_KEY: ${{ secrets.BLUEHOST_SSH_KEY }}
+          BLUEHOST_PATH: ${{ secrets.BLUEHOST_PATH }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$BLUEHOST_SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+          ssh-keyscan -p "$BLUEHOST_PORT" "$BLUEHOST_HOST" >> ~/.ssh/known_hosts
+
+          rsync -avz \
+            --exclude ".git/" \
+            --exclude ".github/" \
+            --exclude "README.md" \
+            --exclude "README.txt" \
+            --exclude "LICENSE" \
+            --exclude ".gitignore" \
+            -e "ssh -p $BLUEHOST_PORT" \
+            ./ "$BLUEHOST_USER@$BLUEHOST_HOST:$BLUEHOST_PATH/"
