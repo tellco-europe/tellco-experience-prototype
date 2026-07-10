@@ -3506,7 +3506,7 @@ button {
   padding: 30px 28px;
   flex-direction: column;
   border-radius: 0;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid #e2e4e8;
   background: #fff;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
