@@ -80,6 +80,51 @@ if (partnerRevealItems.length && 'IntersectionObserver' in window && !window.mat
   partnerRevealItems.forEach((item) => partnerRevealObserver.observe(item));
 }
 
+const hpFinalVideo = document.querySelector('[data-hp-final-video]');
+const hpFinalVideoControl = document.querySelector('[data-hp-final-video-control]');
+
+if (hpFinalVideo && hpFinalVideoControl) {
+  const hpFinalVideoControlIcon = hpFinalVideoControl.querySelector('[data-hp-final-video-control-icon]');
+  const hpFinalVideoControlLabel = hpFinalVideoControl.querySelector('[data-hp-final-video-control-label]');
+  const hpReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const syncHpFinalVideoControl = () => {
+    const isPaused = hpFinalVideo.paused;
+    hpFinalVideoControl.setAttribute('aria-label', `${isPaused ? 'Play' : 'Pause'} ecosystem video`);
+    if (hpFinalVideoControlIcon) hpFinalVideoControlIcon.textContent = isPaused ? '▶' : 'Ⅱ';
+    if (hpFinalVideoControlLabel) hpFinalVideoControlLabel.textContent = isPaused ? 'Play' : 'Pause';
+  };
+
+  if (hpReducedMotion.matches) {
+    hpFinalVideo.autoplay = false;
+    hpFinalVideo.pause();
+  }
+
+  hpFinalVideoControl.addEventListener('click', () => {
+    if (hpFinalVideo.paused) {
+      hpFinalVideo.play().catch(syncHpFinalVideoControl);
+    } else {
+      hpFinalVideo.pause();
+    }
+  });
+
+  hpFinalVideo.addEventListener('play', syncHpFinalVideoControl);
+  hpFinalVideo.addEventListener('pause', syncHpFinalVideoControl);
+  hpFinalVideo.addEventListener('ended', syncHpFinalVideoControl);
+
+  const handleHpReducedMotionChange = (event) => {
+    if (event.matches) hpFinalVideo.pause();
+  };
+
+  if (typeof hpReducedMotion.addEventListener === 'function') {
+    hpReducedMotion.addEventListener('change', handleHpReducedMotionChange);
+  } else {
+    hpReducedMotion.addListener(handleHpReducedMotionChange);
+  }
+
+  syncHpFinalVideoControl();
+}
+
 document.querySelectorAll('[data-demo-form]').forEach((form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
