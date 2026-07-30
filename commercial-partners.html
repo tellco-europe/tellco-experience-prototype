@@ -220,52 +220,165 @@ h3 {
   margin-bottom:8px;
 }
 .matrix-table-wrap {
+  width:100%;
+  max-width:var(--max);
   overflow-x:auto;
-  border:1px solid #d8d8d8;
+  margin:24px auto 0;
+  border:1px solid #d9dde3;
+  border-radius:10px;
   background:#fff;
-  box-shadow:0 16px 40px rgba(0,0,0,.08);
-  margin-top:24px;
+  box-shadow:0 14px 32px rgba(17,24,39,.09);
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-inline:contain;
 }
 .matrix-table {
   width:100%;
-  border-collapse:collapse;
+  border-collapse:separate;
+  border-spacing:0;
   table-layout:fixed;
-  min-width:1000px;
+  min-width:1040px;
   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .matrix-table .benefits-col { width:28%; }
 .matrix-table .tier-col { width:18%; }
 .matrix-table th,
 .matrix-table td {
-  border:1px solid #202020;
-  padding:12px 14px;
+  border:0;
+  border-right:1px solid #d9dde3;
+  border-bottom:1px solid #d9dde3;
+  padding:16px 18px;
   text-align:center;
   vertical-align:middle;
-  overflow-wrap:anywhere;
+  font-size:15.5px;
+  line-height:1.35;
+}
+.matrix-table tr > :last-child {
+  border-right:0;
+}
+.matrix-table tbody tr:last-child > * {
+  border-bottom:0;
 }
 .matrix-table thead th {
   background:var(--red);
   color:#fff;
   font-weight:800;
-  font-size:1rem;
+  font-size:15.5px;
+  padding-block:18px;
+  border-right-color:rgba(255,255,255,.4);
+}
+.matrix-table thead th:first-child {
+  text-align:left;
+  padding-left:24px;
+}
+.matrix-tier-heading {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:52px;
+}
+.matrix-tier-heading__label {
+  display:inline-block;
+}
+.matrix-tier-icon {
+  display:block;
+  flex:0 0 auto;
+  width:40px;
+  height:48px;
+}
+.matrix-tier-icon--platinum {
+  width:50px;
+  height:52px;
+}
+.matrix-tier-icon--franchise {
+  width:42px;
+  height:46px;
 }
 .matrix-table tbody th {
   text-align:left;
   font-weight:700;
   color:#222;
+  background:#f1f3f5;
+  padding-left:24px;
+}
+.matrix-table tbody tr:nth-child(odd) td {
   background:#fff;
 }
-.matrix-table .highlight-row th,
-.matrix-table .highlight-row td {
-  background:var(--red);
-  color:#fff;
+.matrix-table tbody tr:nth-child(even) td {
+  background:#f7f8fa;
+}
+.matrix-table tbody tr:nth-child(even) th {
+  background:#eceff2;
+}
+.matrix-table tbody tr.highlight-row > th,
+.matrix-table tbody tr.highlight-row > td {
+  background:#fff1f2;
+  color:var(--red);
   font-weight:800;
 }
+.matrix-table tbody tr.highlight-row > th {
+  border-left:4px solid var(--red);
+  padding-left:20px;
+  font-weight:700;
+}
+.matrix-table tbody tr.highlight-row > td {
+  white-space:nowrap;
+  font-size:15.5px;
+}
+.matrix-swipe-hint {
+  display:none;
+  width:100%;
+  max-width:var(--max);
+  margin:20px auto -12px;
+  color:#6b7280;
+  font-size:13px;
+  line-height:1.4;
+}
 .matrix-note {
-  margin:12px 0 0;
-  color:#555;
-  font-size:.92rem;
+  width:100%;
+  max-width:var(--max);
+  margin:18px auto 0;
+  padding-left:14px;
+  border-left:2px solid var(--red);
+  color:#5f6670;
+  font-size:13.5px;
   line-height:1.45;
+}
+@media (max-width: 1087px) {
+  .matrix-swipe-hint {
+    display:block;
+  }
+  .matrix-table thead th:first-child,
+  .matrix-table tbody th {
+    position:sticky;
+    left:0;
+  }
+  .matrix-table thead th:first-child {
+    z-index:3;
+    background:var(--red);
+    box-shadow:1px 0 0 #d9dde3;
+  }
+  .matrix-table tbody th {
+    z-index:2;
+    box-shadow:1px 0 0 #d9dde3;
+  }
+  .matrix-table tbody tr:nth-child(odd) th {
+    background:#f1f3f5;
+  }
+  .matrix-table tbody tr:nth-child(even) th {
+    background:#eceff2;
+  }
+  .matrix-table tbody tr.highlight-row > th {
+    background:#fff1f2;
+  }
+}
+@media (max-width: 600px) {
+  .matrix-table .benefits-col {
+    width:200px;
+  }
+  .matrix-table .tier-col {
+    width:210px;
+  }
 }
 .products-grid {
   display:grid;
@@ -978,6 +1091,12 @@ a[class*="button"] {
 
 .matrix-section {
   padding-top: clamp(28px, 3vw, 40px) !important;
+  background:#fff;
+  overflow-x:clip;
+}
+
+.matrix-section .commercial-container {
+  background:transparent;
 }
 
 
@@ -1144,6 +1263,7 @@ a[class*="button"] {
 <div class="commercial-container">
 <p class="commercial-eyebrow">Commercial Partner Tiers</p>
 <h2 class="reduced-section-title">Partner Program Tier Comparison</h2>
+<p class="matrix-swipe-hint">Swipe to compare tiers.</p>
 <div class="matrix-table-wrap">
 <table class="matrix-table">
 <colgroup>
@@ -1154,40 +1274,40 @@ a[class*="button"] {
 <col class="tier-col"/>
 </colgroup>
 <thead><tr>
-<th>Benefits</th>
-<th>Silver Reseller</th>
-<th>Gold Reseller</th>
-<th>Platinum Reseller</th>
-<th>TellCo Europe Franchise</th>
+<th scope="col">Benefits</th>
+<th scope="col"><span class="matrix-tier-heading"><svg class="matrix-tier-icon" viewBox="0 0 44 52" aria-hidden="true" focusable="false"><defs><linearGradient id="silver-medal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fafc"/><stop offset=".5" stop-color="#cbd0d6"/><stop offset="1" stop-color="#8f98a3"/></linearGradient></defs><path d="M11 30 7 50l9-6 6 8 4-22Z" fill="#e8edf2"/><path d="m33 30 4 20-9-6-6 8-4-22Z" fill="#aeb7c1"/><circle cx="22" cy="20" r="15" fill="url(#silver-medal)" stroke="#fff" stroke-width="2"/><circle cx="22" cy="20" r="10.5" fill="none" stroke="#fff" stroke-opacity=".65"/></svg><span class="matrix-tier-heading__label">Silver Reseller</span></span></th>
+<th scope="col"><span class="matrix-tier-heading"><svg class="matrix-tier-icon" viewBox="0 0 44 52" aria-hidden="true" focusable="false"><defs><linearGradient id="gold-medal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2a6"/><stop offset=".48" stop-color="#f6bd22"/><stop offset="1" stop-color="#c98300"/></linearGradient></defs><path d="m12 3 8 17h8L20 3Z" fill="#ffd65a"/><path d="m24 3-8 17h8L32 3Z" fill="#d89b00"/><circle cx="22" cy="29" r="14" fill="url(#gold-medal)" stroke="#ffe48a" stroke-width="2"/><circle cx="22" cy="29" r="9.5" fill="none" stroke="#fff3b5" stroke-opacity=".7"/><path d="m22 21 2.2 4.5 5 .7-3.6 3.5.8 5-4.4-2.4-4.4 2.4.8-5-3.6-3.5 5-.7Z" fill="#ffe16a"/></svg><span class="matrix-tier-heading__label">Gold Reseller</span></span></th>
+<th scope="col"><span class="matrix-tier-heading"><svg class="matrix-tier-icon matrix-tier-icon--platinum" viewBox="0 0 56 56" aria-hidden="true" focusable="false"><defs><radialGradient id="platinum-medal" cx=".35" cy=".25" r=".85"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#dce3e8"/><stop offset="1" stop-color="#939da6"/></radialGradient></defs><g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"><path d="M15 43C6 37 4 25 10 15"/><path d="M41 43c9-6 11-18 5-28"/></g><g fill="#fff"><ellipse cx="9" cy="18" rx="2.3" ry="4" transform="rotate(-28 9 18)"/><ellipse cx="7.5" cy="25" rx="2.3" ry="4" transform="rotate(-10 7.5 25)"/><ellipse cx="9" cy="32" rx="2.3" ry="4" transform="rotate(15 9 32)"/><ellipse cx="13" cy="39" rx="2.3" ry="4" transform="rotate(35 13 39)"/><ellipse cx="47" cy="18" rx="2.3" ry="4" transform="rotate(28 47 18)"/><ellipse cx="48.5" cy="25" rx="2.3" ry="4" transform="rotate(10 48.5 25)"/><ellipse cx="47" cy="32" rx="2.3" ry="4" transform="rotate(-15 47 32)"/><ellipse cx="43" cy="39" rx="2.3" ry="4" transform="rotate(-35 43 39)"/></g><circle cx="28" cy="27" r="16" fill="url(#platinum-medal)" stroke="#fff" stroke-width="2.5"/><circle cx="28" cy="27" r="11.5" fill="none" stroke="#aab4bd" stroke-width="1.2"/><path d="m28 17.5 2.8 5.8 6.4.9-4.6 4.5 1.1 6.4-5.7-3-5.7 3 1.1-6.4-4.6-4.5 6.4-.9Z" fill="#fff" stroke="#a8b1ba" stroke-width=".8"/></svg><span class="matrix-tier-heading__label">Platinum Reseller</span></span></th>
+<th scope="col"><span class="matrix-tier-heading"><svg class="matrix-tier-icon matrix-tier-icon--franchise" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="m7 16 8 7 9-15 9 15 8-7-4 21H11Z" fill="#fff"/><circle cx="7" cy="14" r="2.5" fill="#fff"/><circle cx="24" cy="6" r="2.5" fill="#fff"/><circle cx="41" cy="14" r="2.5" fill="#fff"/><path d="M11 40h26" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/></svg><span class="matrix-tier-heading__label">TellCo Europe Franchise</span></span></th>
 </tr></thead>
 <tbody>
 <tr>
 <th scope="row">Standard discount on goods (%)</th>
-<td>2 to 5</td>
-<td>10</td>
-<td>15</td>
-<td>20</td>
+<td>2–5%</td>
+<td>10%</td>
+<td>15%</td>
+<td>20%</td>
 </tr>
 <tr>
 <th scope="row">Rebate rate at target revenue (%)</th>
 <td>—</td>
 <td>—</td>
-<td>3</td>
-<td>5</td>
+<td>3%</td>
+<td>5%</td>
 </tr>
 <tr>
 <th scope="row">Extra marketing rebate (%)</th>
 <td>—</td>
 <td>—</td>
-<td>2</td>
-<td>2</td>
+<td>2%</td>
+<td>2%</td>
 </tr>
 <tr>
 <th scope="row">Minimum Gross Margin (%)</th>
-<td>2 to 5</td>
-<td>10</td>
-<td>20</td>
-<td>25–30</td>
+<td>2–5%</td>
+<td>10%</td>
+<td>20%</td>
+<td>25–30%</td>
 </tr>
 <tr>
 <th scope="row">Exclusive territory</th>
@@ -1201,21 +1321,21 @@ a[class*="button"] {
 <td>—</td>
 <td>—</td>
 <td>—</td>
-<td>3</td>
+<td>3%</td>
 </tr>
 <tr>
 <th scope="row">Contract duration</th>
 <td>—</td>
-<td>1</td>
-<td>1 to 3</td>
-<td>3</td>
+<td>1 year</td>
+<td>1–3 years</td>
+<td>3 years</td>
 </tr>
 <tr class="highlight-row">
-<th scope="row">Minimum required order per year (EUR)</th>
+<th scope="row">Minimum required order<br/>per year (EUR)</th>
 <td>—</td>
 <td>350,000–1,000,000</td>
 <td>1,000,000–5,000,000</td>
-<td>&gt; 5,000,000</td>
+<td>Over 5,000,000</td>
 </tr>
 <tr>
 <th scope="row">Minimum required stock</th>
