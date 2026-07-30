@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Service Partners — Preferred Layout Preview v5</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Georama:wdth,wght@100..150,100..900&display=swap");
+:root {
+  --red:#e30613;
+  --text:#222;
+  --light:#f4f4f4;
+  --line:#dedede;
+  --hero:#4f6f93;
+  --white:#fff;
+  --max:1180px;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.5;
+}
+.service-container {
+  width:min(100% - 48px, var(--max));
+  margin-inline:auto;
+}
+.service-section {
+  padding:clamp(58px, 7vw, 92px) 0;
+}
+.service-section.is-gray {
+  background:var(--light);
+}
+.service-eyebrow {
+  margin:0 0 10px;
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:800;
+  font-size:12px;
+}
+h1,h2,h3,p { margin-top:0; }
+/* Hero image update only */
+.hero-shell {
+  background:
+    linear-gradient(90deg, rgba(5, 17, 36, 0.12) 0%, rgba(5, 17, 36, 0.22) 38%, rgba(5, 17, 36, 0.72) 100%),
+    url("assets/service-hero.png") center center / cover no-repeat;
+  min-height:820px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-shell .service-container {
+  min-height:820px;
+  position:relative;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+.hero-content {
+  max-width:520px;
+  color:#fff;
+  margin-left:auto;
+}
+.hero-title {
+  margin:0 0 28px;
+  color:#fff;
+  font-family:"Georama","Roboto Condensed",Arial,sans-serif;
+  font-weight:500;
+  font-size:clamp(56px, 8vw, 86px);
+  line-height:.96;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+}
+.hero-subtitle {
+  margin:0 0 42px;
+  color:#fff;
+  font-family:"Georama","Roboto Condensed",Arial,sans-serif;
+  font-weight:700;
+  font-size:clamp(20px, 2.2vw, 28px);
+  line-height:1.35;
+  max-width:980px;
+}
+.hero-buttons {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  max-width:420px;
+}
+.hero-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:70px;
+  padding:18px 28px;
+  text-decoration:none;
+  font-family:"Georama","Roboto Condensed",Arial,sans-serif;
+  font-weight:700;
+  font-size:16px;
+  line-height:1;
+  letter-spacing:.01em;
+}
+.hero-button.primary {
+  background:var(--red);
+  color:#fff;
+  border:1px solid var(--red);
+}
+.hero-button.secondary {
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.7);
+}
+.picture-1-tag {
+  display:none;
+}
+.section-title {
+  font-size:clamp(42px, 6vw, 70px);
+  line-height:0.98;
+  letter-spacing:-.03em;
+  margin-bottom:24px;
+}
+h2 {
+  font-size:clamp(34px, 4vw, 54px);
+  line-height:1.03;
+  letter-spacing:-.035em;
+  margin-bottom:20px;
+}
+h3 {
+  font-size:22px;
+  line-height:1.12;
+  margin-bottom:12px;
+}
+.body-copy {
+  color:#444;
+  font-size:16px;
+  line-height:1.7;
+}
+.two-column {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:clamp(34px, 5vw, 72px);
+  align-items:center;
+}
+.two-column.reverse {
+  grid-template-columns:.95fr 1.05fr;
+}
+.picture-placeholder {
+  min-height:260px;
+  background:linear-gradient(135deg,#ededed,#fafafa);
+  border:1px dashed #b7b7b7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  color:#777;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.04em;
+}
+.portfolio-button,
+.cta-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:14px 22px;
+  background:var(--red);
+  color:#fff;
+  border:1px solid var(--red);
+  text-decoration:none;
+  font-family:"Georama","Roboto Condensed",Arial,sans-serif;
+  font-weight:700;
+  font-size:14px;
+  line-height:1;
+  letter-spacing:.01em;
+}
+.tier-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:22px;
+  margin-top:32px;
+}
+.tier-card,
+.support-card,
+.product-card {
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+}
+.tier-card {
+  padding:26px;
+  border-top:5px solid var(--red);
+}
+.support-grid {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:18px;
+  margin-top:32px;
+}
+.support-card {
+  padding:28px;
+}
+.check-list {
+  padding-left:20px;
+  margin:18px 0 0;
+}
+.check-list li {
+  margin-bottom:8px;
+}
+.matrix-table-wrap {
+  overflow-x:auto;
+  border:1px solid #d8d8d8;
+  background:#fff;
+  box-shadow:0 16px 40px rgba(0,0,0,.08);
+  margin-top:24px;
+}
+.matrix-table {
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  min-width:1000px;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.matrix-table .benefits-col { width:28%; }
+.matrix-table .tier-col { width:18%; }
+.matrix-table th,
+.matrix-table td {
+  border:1px solid #202020;
+  padding:12px 14px;
+  text-align:center;
+  vertical-align:middle;
+  overflow-wrap:anywhere;
+}
+.matrix-table thead th {
+  background:var(--red);
+  color:#fff;
+  font-weight:800;
+  font-size:1rem;
+}
+.matrix-table tbody th {
+  text-align:left;
+  font-weight:700;
+  color:#222;
+  background:#fff;
+}
+.matrix-table .highlight-row th,
+.matrix-table .highlight-row td {
+  background:var(--red);
+  color:#fff;
+  font-weight:800;
+}
+.matrix-note {
+  margin:12px 0 0;
+  color:#555;
+  font-size:.92rem;
+  line-height:1.45;
+}
+.products-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+  margin-top:30px;
+}
+.product-card {
+  border-top:5px solid var(--red);
+}
+.product-image {
+  min-height:190px;
+  background:linear-gradient(135deg,#ededed,#fafafa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#777;
+  font-size:14px;
+  text-align:center;
+  padding:16px;
+}
+.picture-placeholder.has-image,
+.product-image.has-image {
+  padding:0;
+  border:0;
+  background:none;
+  overflow:hidden;
+  color:transparent;
+}
+.picture-placeholder.has-image img {
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:260px;
+  object-fit:cover;
+}
+.product-image.has-image img {
+  display:block;
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.product-content {
+  padding:24px;
+}
+.product-category {
+  color:var(--red);
+  text-transform:uppercase;
+  font-weight:800;
+  letter-spacing:.12em;
+  font-size:12px;
+  margin-bottom:10px;
+}
+.final-cta {
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  gap:64px;
+  align-items:center;
+}
+.final-cta-section {
+  background:#182534;
+}
+.final-cta-section .service-eyebrow,
+.final-cta-section .half-size-title,
+.final-cta-section .body-copy {
+  color:#fff;
+}
+@media (max-width: 960px) {
+  .two-column,
+  .two-column.reverse,
+  .tier-grid,
+  .support-grid,
+  .products-grid,
+  .final-cta {
+    grid-template-columns:1fr;
+  }
+  .hero-shell,
+  .hero-shell .service-container {
+    min-height:auto;
+  }
+  .hero-shell .service-container {
+    justify-content:flex-start;
+    align-items:flex-end;
+  }
+  .hero-content {
+    padding:90px 0 140px;
+    max-width:100%;
+  }
+  .picture-1-tag {
+    right:24px;
+    left:24px;
+    max-width:none;
+    min-width:0;
+  }
+}
+
+/* Title size update only: reduce selected section titles by 30%. */
+.reduced-section-title {
+  font-size: clamp(26.4px, 3.08vw, 41.8px) !important;
+  line-height: 1.08;
+}
+
+
+/* One-change update: only these two titles are half their current font size. */
+.half-size-title {
+  font-size: clamp(17px, 2vw, 27px) !important;
+}
+
+
+/* Benefits card style update only for Resellers and Franchise sections. */
+.partner-benefits-title {
+  margin: 22px 0 14px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.partner-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 0;
+}
+.partner-benefit-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-left: 4px solid #d71920;
+  border-radius: 8px;
+  padding: 16px 18px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.service-section.franchise-section {
+  padding-bottom: 42px;
+}
+.service-story-feature {
+  padding: 24px 0 92px;
+  background: var(--light);
+}
+.service-story-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.service-story-caption {
+  padding-top: 26px;
+}
+.service-story-caption h2 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+
+/* Solutions and Products card update only. */
+.solutions-section .products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+}
+.solutions-section .product-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-top: 5px solid var(--red);
+  border-radius: 8px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.solutions-section .product-card.featured-product-card {
+  grid-column: span 2;
+}
+.solutions-section .product-content {
+  padding: 26px;
+}
+.solutions-section .product-category {
+  color: var(--red);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .12em;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.solutions-section .product-card h3 {
+  margin-bottom: 18px;
+}
+.solutions-section .solution-group {
+  padding: 16px 0;
+  border-top: 1px solid #eeeeee;
+}
+.solutions-section .solution-group:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+.solutions-section .solution-group-title {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 800;
+}
+.solutions-section .solution-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.solutions-section .solution-list li {
+  margin-bottom: 6px;
+}
+.solutions-section .learn-more-link {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--red);
+  font-weight: 800;
+  text-decoration: none;
+}
+.solutions-section .learn-more-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 960px) {
+  .solutions-section .product-card.featured-product-card {
+    grid-column: span 1;
+  }
+}
+
+
+/* Picture placeholder update only for Solutions and Products cards. */
+.solutions-section .product-image-placeholder {
+  width: 100%;
+  min-height: 92px;
+  border: 1.5px dashed #c9c9c9;
+  background: #f7f7f7;
+  color: #777;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0 0 18px;
+}
+.solutions-section .solution-group-with-placeholder {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 18px;
+  align-items: start;
+}
+.solutions-section .solution-group-with-placeholder .product-image-placeholder {
+  min-height: 120px;
+  margin: 2px 0 0;
+}
+@media (max-width: 720px) {
+  .solutions-section .solution-group-with-placeholder {
+    grid-template-columns: 1fr;
+  }
+  .solutions-section .solution-group-with-placeholder .product-image-placeholder {
+    min-height: 90px;
+  }
+}
+
+
+.solutions-section .product-card .product-image-placeholder.lower-placeholder {
+  margin: 14px 0 0;
+  min-height: 86px;
+}
+
+/* Why Partner with TellCo Europe cards layout update only */
+.why-partner-section .why-partner-header {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+.why-partner-section .why-partner-header h2 {
+  margin-bottom: 16px;
+}
+.why-partner-section .why-partner-intro {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+}
+.why-partner-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.why-partner-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  padding: 26px 24px 24px;
+  min-height: 100%;
+}
+.why-partner-card .why-partner-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #f7eeee;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.why-partner-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #222;
+}
+.why-partner-card p {
+  margin: 0;
+  color: #555;
+  line-height: 1.68;
+}
+@media (max-width: 980px) {
+  .why-partner-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Reseller and Franchise benefits two-column layout update only */
+.resellers-section .partner-benefits-grid,
+.franchise-section .partner-benefits-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 760px) {
+  .resellers-section .partner-benefits-grid,
+  .franchise-section .partner-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Franchise benefits one-column layout update only */
+.franchise-section .partner-benefits-grid {
+  grid-template-columns: 1fr;
+}
+
+
+/* Resellers benefits one-column layout update only */
+.resellers-section .partner-benefits-grid {
+  grid-template-columns: 1fr;
+}
+
+
+
+
+/* Global page font and text color update only */
+#service-partners-page {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(41, 41, 41);
+}
+#service-partners-page * {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* Requested heading size update only */
+.intro-section .service-eyebrow,
+.tiers-section .service-eyebrow,
+.resellers-section .service-eyebrow,
+.franchise-section .service-eyebrow,
+.matrix-section .service-eyebrow,
+.solutions-section .service-eyebrow,
+.final-cta-section .service-eyebrow {
+  font-size: 13.2px;
+}
+
+.intro-section .reduced-section-title,
+.tiers-section .reduced-section-title,
+.resellers-section .reduced-section-title,
+.franchise-section .reduced-section-title,
+.matrix-section .reduced-section-title,
+.solutions-section .reduced-section-title {
+  font-size: clamp(23.76px, 2.772vw, 37.62px) !important;
+}
+
+
+/* Match Why Partner and final CTA heading size to Two paths heading update only */
+.why-partner-section .half-size-title,
+.final-cta-section .half-size-title {
+  font-size: clamp(23.76px, 2.772vw, 37.62px) !important;
+  line-height: 1.08;
+}
+
+
+
+/* Hero Georama typography exact update only */
+#service-partners-page .hero-title {
+  font-family: "Georama", sans-serif !important;
+  font-weight: 500;
+  font-variation-settings: "wdth" 145, "wght" 500;
+}
+
+#service-partners-page .hero-subtitle,
+#service-partners-page .hero-button {
+  font-family: "Georama", sans-serif !important;
+  font-weight: 700;
+  font-variation-settings: "wdth" 135, "wght" 700;
+}
+
+
+
+/* Service Partnership Structure card grid update only */
+.service-section.tiers-section .tier-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .service-section.tiers-section .tier-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ESCO & LaaS operator deliverables card design update only */
+.resellers-section .operator-deliverables-grid {
+  max-width: 920px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+  margin-bottom: 34px;
+}
+
+.resellers-section .operator-deliverable-card {
+  border-left: 0;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-size: 14px;
+  line-height: 1.35;
+  box-shadow: none;
+  text-align: center;
+  background: #c62828;
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .resellers-section .operator-deliverables-grid {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+/* Premier tier cards + spacing update only */
+.resellers-section .extra-operator-space {
+  height: 36px;
+}
+
+@media (max-width: 760px) {
+  .resellers-section .extra-operator-space {
+    height: 28px;
+  }
+}
+
+/* Balanced intro + full-width cards layout update only */
+.section-intro-layout {
+  align-items: start;
+  gap: 56px;
+}
+
+.section-detail-layout {
+  margin-top: 34px;
+}
+
+.section-detail-layout .partner-benefits-title {
+  margin-top: 0;
+}
+
+.resellers-section .section-detail-layout .partner-benefits-grid.esco-benefits-grid,
+.franchise-section .section-detail-layout .partner-benefits-grid.service-benefits-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+@media (max-width: 760px) {
+  .resellers-section .section-detail-layout .partner-benefits-grid.esco-benefits-grid,
+  .franchise-section .section-detail-layout .partner-benefits-grid.service-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-intro-layout {
+    gap: 28px;
+  }
+}
+
+
+
+/* Operator role text + image layout update only */
+.resellers-section .operator-role-layout {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(30px, 4vw, 56px);
+  align-items: start;
+  margin-top: 0;
+}
+
+.resellers-section .operator-role-copy .partner-benefits-title {
+  margin-bottom: 14px;
+}
+
+.resellers-section .operator-role-copy .body-copy {
+  margin-bottom: 0;
+}
+
+.resellers-section .operator-role-image {
+  min-height: 240px;
+}
+.resellers-section .operator-role-image.has-image img {
+  min-height:240px;
+}
+
+.resellers-section .operator-role-cards {
+  margin-top: 24px;
+}
+
+.resellers-section .operator-role-outro {
+  margin-top: 22px;
+}
+
+@media (max-width: 760px) {
+  .resellers-section .operator-role-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+
+/* Operator role left-side cards layout update only */
+.resellers-section .operator-role-copy .operator-deliverables-grid {
+  max-width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+  margin-bottom: 30px;
+}
+
+.resellers-section .operator-role-copy .operator-role-outro {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .resellers-section .operator-role-copy .operator-deliverables-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Service Partners hero: match homepage hero typography and button treatment only */
+#service-partners-page .hero-shell .service-container {
+  min-height: 820px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#service-partners-page .hero-shell .hero-content {
+  max-width: 620px;
+  color: #fff;
+  margin-left: auto;
+}
+.service-partners-page .hero-shell .hero-title {
+  margin: 0;
+  color: #fff;
+  font-family: "Georama", "Roboto Condensed", Arial, sans-serif !important;
+  font-size: 54.4px;
+  font-weight: 500;
+  font-variation-settings: "wdth" 145, "wght" 500;
+  line-height: 0.98;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+.service-partners-page .hero-shell .hero-subtitle {
+  margin: 18px 0 0;
+  color: #fff;
+  font-family: "Georama", "Roboto Condensed", Arial, sans-serif !important;
+  font-size: 20.4px;
+  font-weight: 400;
+  font-variation-settings: "wdth" 135, "wght" 400;
+  font-stretch: 135%;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  max-width: 620px;
+}
+.service-partners-page .hero-shell .hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: clamp(240px, 22vw, 300px);
+  max-width: 100%;
+  gap: 25px;
+  margin-top: 42px;
+}
+.service-partners-page .hero-shell .hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 32px;
+  text-decoration: none;
+  font-family: "Georama", "Roboto Condensed", Arial, sans-serif !important;
+  font-size: 13.6px;
+  font-weight: 400;
+  font-variation-settings: "wdth" 135, "wght" 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  border-radius: 0;
+  white-space: nowrap;
+}
+.service-partners-page .hero-shell .hero-button.primary {
+  background: var(--red);
+  color: #fff;
+  border: 1px solid var(--red);
+}
+.service-partners-page .hero-shell .hero-button.secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.75);
+}
+@media (min-width: 961px) {
+  .service-partners-page .hero-shell .hero-content {
+    transform: translateY(-45px);
+  }
+  .service-partners-page .hero-shell .hero-title,
+  .service-partners-page .hero-shell .hero-subtitle {
+    transform: translateY(-50px);
+  }
+}
+@media (max-width: 960px) {
+  #service-partners-page .hero-shell,
+  #service-partners-page .hero-shell .service-container {
+    min-height: auto;
+  }
+  #service-partners-page .hero-shell .service-container {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  #service-partners-page .hero-shell .hero-content {
+    padding: 90px 0 140px;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .service-partners-page .hero-shell .hero-title {
+    font-size: 38.4px;
+    line-height: 1;
+    letter-spacing: 0.015em;
+    font-variation-settings: "wdth" 128, "wght" 500;
+  }
+  .service-partners-page .hero-shell .hero-subtitle {
+    font-size: 18.7px;
+    letter-spacing: 0.008em;
+  }
+  .service-partners-page .hero-shell .hero-button {
+    font-size: 12.75px;
+    letter-spacing: 0.008em;
+  }
+}
+@media (max-width: 809px) {
+  .service-partners-page .hero-shell .hero-title {
+    font-size: 21.6px;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: 0;
+    font-variation-settings: "wdth" 100, "wght" 600;
+  }
+  .service-partners-page .hero-shell .hero-subtitle {
+    margin-top: 12px;
+    font-size: 14.45px;
+    letter-spacing: 0.006em;
+  }
+  .service-partners-page .hero-shell .hero-buttons {
+    width: 240px;
+    margin-top: 28px;
+    gap: 22px;
+  }
+  .service-partners-page .hero-shell .hero-button {
+    padding: 13px 26px;
+    font-size: 11.9px;
+    letter-spacing: 0.006em;
+    font-variation-settings: "wdth" 125, "wght" 400;
+  }
+}
+
+/* Keep hero typography consistent with the Commercial Partners hero. */
+@media (min-width: 961px) and (max-width: 1199px) {
+  .service-partners-page .hero-shell .hero-title {
+    font-size: 38.4px;
+    line-height: 1;
+    letter-spacing: 0.015em;
+    font-variation-settings: "wdth" 128, "wght" 500;
+  }
+
+  .service-partners-page .hero-shell .hero-subtitle {
+    font-size: 18.7px;
+    letter-spacing: 0.008em;
+  }
+
+  .service-partners-page .hero-shell .hero-button {
+    font-size: 12.75px;
+    letter-spacing: 0.008em;
+  }
+}
+
+
+/* Service Partner Ecosystem to Service Partnership Structure spacing reduction only */
+.intro-section {
+  padding-bottom: clamp(28px, 3vw, 40px) !important;
+}
+.intro-section + .tiers-section {
+  padding-top: clamp(28px, 3vw, 40px) !important;
+}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="topbar" aria-label="TellCo utility links">
+    <div class="container topbar-inner">
+      <div class="social-links" aria-label="Social links">
+        <a href="https://www.facebook.com/Tellcoeuropeoffical" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.2V5h-2.8C10.4 5 9 6.8 9 9.4V11H6.8v3.4H9V21h3.7v-6.6h2.8L16 11h-3.3V9.8c0-.9.4-1.3 1.3-1.3Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/tellcoeuropeofficial/" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.7 2.8h8.6c2.7 0 4.9 2.2 4.9 4.9v8.6c0 2.7-2.2 4.9-4.9 4.9H7.7a4.9 4.9 0 0 1-4.9-4.9V7.7c0-2.7 2.2-4.9 4.9-4.9Zm0 2A2.9 2.9 0 0 0 4.8 7.7v8.6a2.9 2.9 0 0 0 2.9 2.9h8.6a2.9 2.9 0 0 0 2.9-2.9V7.7a2.9 2.9 0 0 0-2.9-2.9H7.7Zm4.3 3.7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.1-3.1a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/tellco-europe-sagl-switzerland/" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.7h3.5V21H5V8.7Zm1.8-5.9a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1ZM10.8 8.7h3.3v1.7h.1c.5-.9 1.7-2 3.5-2 3.7 0 4.3 2.4 4.3 5.5V21h-3.5v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-3.5V8.7Z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCJPmVI-EG29OVMQisPmbQMA?view_as=subscriber" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.9-2.1c-.9-.9-1.9-.9-2.4-1C15 3.8 12 3.8 12 3.8h-.1s-3 0-6.3.3c-.5.1-1.5.1-2.4 1-.7.6-.9 2.1-.9 2.1S2 9 2 10.8v1.7c0 1.8.3 3.6.3 3.6s.2 1.5.9 2.1c.9.9 2.1.9 2.6 1 1.9.2 6.2.3 6.2.3s3 0 6.3-.3c.5-.1 1.5-.1 2.4-1 .7-.6.9-2.1.9-2.1s.3-1.8.3-3.6v-1.7c0-1.8-.3-3.6-.3-3.6ZM9.9 14.9V8.7l5.7 3.1-5.7 3.1Z"/></svg>
+        </a>
+        <a href="https://x.com/TellCo__Europe" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on X" class="social-icon social-x">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 10.3 21.8 2h-1.8l-6.6 7.2L8.2 2H2l8 11.1L2 22h1.8l7-7.7 5.6 7.7H22l-7.8-11.7Zm-2.5 2.8-.8-1.1L4.5 3.4h2.8l5.1 6.9.8 1.1 6.8 9.2h-2.8l-5.5-7.5Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="TellCoExperience XL home">
+        <img src="assets/logo.png" alt="TellCo Europe Switzerland" class="brand-logo">
+      </a>
+
+      <button class="mobile-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="visually-hidden">Open navigation</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" data-nav aria-label="Primary navigation">
+        <a href="index.html">TellCoExperience XL</a>
+        <a href="commercial-partners.html">Commercial Partners</a>
+        <a href="service-partners.html" aria-current="page">Service Partners</a>
+        <a href="influencers-partners.html">Influencers</a>
+        <a href="affiliates-partners.html">Affiliates</a>
+        <a href="strategic-partners.html">Strategic Partners</a>
+        <a href="industries.html">Industries</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+<main id="main" class="service-partners-page">
+<section class="hero-shell">
+<div class="service-container">
+<div class="hero-content">
+<h1 class="hero-title">SERVICE<br/>PARTNERS</h1>
+<p class="hero-subtitle">Deliver long-term energy performance with TellCo Europe</p>
+<div class="hero-buttons">
+<a class="hero-button primary" href="#service-partner-tiers">Explore Partner Tiers</a>
+<a class="hero-button secondary" href="#esco-laas-models">Explore ESCO &amp; LaaS Models</a>
+</div>
+</div>
+</div>
+</section>
+<section class="service-section is-gray market-section why-partner-section">
+<div class="service-container">
+<div class="why-partner-header">
+<h2 class="half-size-title">Why work with TellCo Europe</h2>
+<p class="why-partner-intro">
+        TellCo Europe helps service partners move beyond installation and project execution into long‑term value creation through service‑led delivery models. By combining certified technologies, advanced financing structures, turnkey project frameworks, and recurring service opportunities, TellCo Europe enables partners to participate in higher‑value clean‑energy, lighting, and infrastructure projects.
+      </p>
+</div>
+<div class="why-partner-cards">
+<article class="why-partner-card">
+<div class="why-partner-number">1</div>
+<h3>Growing Market</h3>
+<p>The global Energy as a Service market was valued at USD 51.88 billion in 2024 and is projected to reach USD 100.34 billion by 2030. Meanwhile, the Lighting as a Service market is expected to reach USD 31.6 billion by 2030, driven by efficiency mandates and infrastructure modernization.</p>
+</article>
+<article class="why-partner-card">
+<div class="why-partner-number">2</div>
+<h3>Real Solutions</h3>
+<p>TellCo Europe provides partners with deployable, field‑ready solutions across LED lighting, solar PV, battery storage, cooling, water systems, smart metering, remote monitoring, and energy‑efficiency services.</p>
+</article>
+<article class="why-partner-card">
+<div class="why-partner-number">3</div>
+<h3>Profitability</h3>
+<p>TellCo Europe’s partnership model enables service providers to participate in more profitable business structures such as ESCO, Energy as a Service, and Lighting as a Service, creating recurring revenue and long‑term client relationships.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="service-section intro-section">
+<div class="service-container two-column">
+<div>
+<p class="service-eyebrow">Service Partner Ecosystem</p>
+<h1 class="section-title reduced-section-title">Partnering for Smarter, Cleaner, More Efficient Energy</h1>
+<p class="body-copy">TellCo Europe empowers service providers to grow their business in the fast‑expanding clean‑energy and smart‑lighting markets. Our Service Partner Ecosystem gives you access to certified technologies, financing structures, turnkey project frameworks, and a global pipeline of opportunities. Whether you install systems, engineer full projects, or operate advanced EaaS/LaaS models, TellCo Europe helps you deliver long‑term performance — and build recurring revenue.</p>
+</div>
+<div class="picture-placeholder has-image"><img alt="Operator service delivery image" src="assets/service-introduction.jpg"/></div>
+</div>
+</section>
+<section class="service-section tiers-section" id="service-partner-tiers">
+<div class="service-container">
+<p class="service-eyebrow">Service Partnership Structure</p>
+<h2 class="reduced-section-title">Explore your service partnership opportunities</h2>
+<div class="tier-grid">
+<article class="tier-card">
+<h3>Installer Partners</h3>
+<p class="body-copy">For companies specializing in hands‑on deployment. Installers implement TellCo Europe LED, solar, cooling, and water systems with precision, following TellCo Europe’s certified standards. Perfect for technical teams ready to scale through consistent project flow.</p>
+</article>
+<article class="tier-card">
+<h3>EPC Companies</h3>
+<p class="body-copy">Ideal for engineering and construction firms delivering full turnkey projects. EPC partners design, procure, and build complete lighting or energy systems for municipalities, industrial clients, and large commercial sites.</p>
+</article>
+<article class="tier-card">
+<h3>TASPs — Technical Authorized Service Providers</h3>
+<p class="body-copy">The technical backbone of TellCo Europe. TASPs are certified partners authorized to install, commission, and maintain systems under warranty. They ensure long‑term performance, compliance, and brand protection.</p>
+</article>
+<article class="tier-card">
+<h3>Maintenance Partners</h3>
+<p class="body-copy">For companies focused on operations and maintenance. These partners handle preventive maintenance, repairs, monitoring, and SLA compliance — keeping TellCo Europe’s systems running flawlessly for years.</p>
+</article>
+<article class="tier-card">
+<h3>ESCO Partners</h3>
+<p class="body-copy">Performance‑driven partners who finance or co‑finance projects, guarantee savings, and deliver shared‑savings models. ESCOs are central to TellCo Europe’s clean‑energy transformation strategy and often manage large institutional clients.</p>
+</article>
+<article class="tier-card">
+<h3>EaaS / LaaS Operators</h3>
+<p class="body-copy">The highest‑value partnership category. Operators deliver TellCo Europe’s Energy‑as‑a‑Service and Lighting‑as‑a‑Service programs — managing financing, billing, monitoring, and full lifecycle operation of clean‑energy assets. This model creates recurring revenue and long‑term client relationships.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="service-section is-gray franchise-section">
+<div class="service-container two-column reverse section-intro-layout">
+<div class="picture-placeholder has-image"><img alt="Solar cooling systems image" src="assets/service-partners.png"/></div>
+<div class="section-intro-copy">
+<p class="service-eyebrow">Service Partners</p>
+<h2 class="reduced-section-title">Build recurring revenue through certified service delivery, performance contracts, and long-term clean-energy operations.</h2>
+<p class="body-copy">For service partners, TellCo Europe can help shift the commercial model from one-time delivery to longer-term energy, lighting, and performance partnerships.</p>
+</div>
+</div>
+<div class="service-container section-detail-layout">
+<h3 class="partner-benefits-title">Benefits</h3>
+<div class="partner-benefits-grid service-benefits-grid">
+<div class="partner-benefit-card"><strong>Access to Certified Technologies</strong><br/>High‑efficiency LED, solar PV, battery storage, cooling, water, and smart‑metering systems backed by extended warranties.</div>
+<div class="partner-benefit-card"><strong>Recurring Revenue Models</strong><br/>EaaS and LaaS programs create predictable monthly income through long‑term service contracts.</div>
+<div class="partner-benefit-card"><strong>Turnkey Project Frameworks</strong><br/>TellCo Europe provides feasibility studies, surveys, engineering, procurement, installation, commissioning, and O&amp;M.</div>
+<div class="partner-benefit-card"><strong>Global Financing &amp; SPV Structures</strong><br/>Off‑balance‑sheet financing, Islamic finance options, sukuks, and shared‑savings models.</div>
+<div class="partner-benefit-card"><strong>Training &amp; Certification</strong><br/>Technical, operational, and financial training ensures partners deliver consistent, high quality results, backed by TellCo Europe’s TASP Certification Framework.</div>
+<div class="partner-benefit-card"><strong>Global Project Pipeline</strong><br/>Access to municipal, industrial, hospitality, government, and infrastructure projects in 30+ countries.</div>
+<div class="partner-benefit-card"><strong>Brand Leverage</strong><br/>Operate under a trusted international brand known for reliability, innovation, and sustainability.</div>
+<div class="partner-benefit-card"><strong>Sustainability Alignment</strong><br/>All TellCo Europe programs support UN SDG 7 — Affordable and Clean Energy — enabling partners to deliver measurable environmental impact.</div>
+</div>
+</div>
+</section>
+<section class="service-story-feature" aria-labelledby="service-story-title">
+<div class="service-container">
+<img class="service-story-image" src="assets/global-expertise-service.webp" width="1920" height="1080" alt="Technician monitoring the performance of a solar installation"/>
+<div class="service-story-caption">
+<h2 id="service-story-title">Service Delivery Beyond Installation</h2>
+<p class="body-copy">TellCo Europe service partners support the full lifecycle of clean-energy projects—from installation and commissioning to monitoring, maintenance, performance management, and long-term operation.</p>
+</div>
+</div>
+</section>
+<section class="service-section resellers-section" id="esco-laas-models">
+<div class="service-container two-column section-intro-layout">
+<div class="section-intro-copy">
+<p class="service-eyebrow">TellCo’s Premier Tier</p>
+<h2 class="reduced-section-title">ESCO &amp; LaaS Operators — The Most Profitable Service Partnership</h2>
+<p class="body-copy">TellCo Europe has developed one of the strongest Energy‑as‑a‑Service (EaaS) and Lighting‑as‑a‑Service (LaaS) frameworks in the market. These programs eliminate CAPEX for clients, simplify procurement, and guarantee measurable savings — creating a powerful business model for operators.</p>
+</div>
+<div class="picture-placeholder has-image"><img alt="Service introduction image" src="assets/esco-laas-operators.jpg"/></div>
+</div>
+<div class="service-container section-detail-layout">
+<h3 class="partner-benefits-title">Why ESCO &amp; LaaS Operators choose TellCo</h3>
+<div class="partner-benefits-grid esco-benefits-grid"><div class="partner-benefit-card"><strong>Offer zero‑CAPEX lighting and energy upgrades</strong>, enabling projects that traditional budget constraints would otherwise block.</div><div class="partner-benefit-card"><strong>Deliver guaranteed savings with smart metering and remote monitoring,</strong> making performance‑based contracts <strong>transparent, verifiable</strong>, and easy to validate.</div><div class="partner-benefit-card"><strong>Deploy Swiss‑engineered LED and solar technologies backed by extended warranties,</strong> giving clients confidence in long‑term reliability and measurable performance.</div><div class="partner-benefit-card"><strong>Serve high‑value sectors</strong> — municipalities, industry, hospitality, airports, ports, and government — where project sizes are larger and credit quality is stronger.</div><div class="partner-benefit-card"><strong>Provide off‑balance‑sheet financing through TellCo Europe’s global banking partners,</strong> enabling clients to modernize infrastructure without increasing debt or capital expenditure.</div><div class="partner-benefit-card"><strong>Execute projects using TellCo Europe’s proven end‑to‑end delivery framework —</strong> from feasibility and design to installation and long‑term <strong>O&amp;M.</strong></div><div class="partner-benefit-card"><strong>Build recurring revenue streams through multi‑year service contracts,</strong> transforming one‑time retrofits into predictable, stable cash flows.</div><div class="partner-benefit-card"><strong>Expand into larger, bundled project scopes</strong> by combining lighting, solar PV, battery storage, cooling, and water solutions into a single integrated <strong>performance contract.</strong></div></div>
+<div aria-hidden="true" class="extra-operator-space"></div>
+<div class="operator-role-layout">
+<div class="operator-role-copy">
+<h3 class="partner-benefits-title">Your role as an operator</h3>
+<p class="body-copy">You manage the service model. TellCo provides the technology, financing frameworks, and project support. Clients pay a monthly fee, and you deliver:</p>
+<div class="partner-benefits-grid operator-deliverables-grid">
+<div class="partner-benefit-card operator-deliverable-card">Guaranteed savings</div>
+<div class="partner-benefit-card operator-deliverable-card">High‑efficiency LED and solar systems</div>
+<div class="partner-benefit-card operator-deliverable-card">Monitoring and reporting</div>
+<div class="partner-benefit-card operator-deliverable-card">Asset management</div>
+<div class="partner-benefit-card operator-deliverable-card">Long‑term maintenance</div>
+<div class="partner-benefit-card operator-deliverable-card">Performance compliance</div>
+</div>
+</div>
+<div class="picture-placeholder operator-role-image has-image"><img alt="ESCO and LaaS operators image" src="assets/operator-service-delivery.jpg"/></div>
+</div>
+</div>
+</section>
+<section class="service-section is-gray solutions-section" id="tellco-europe-solutions">
+<div class="service-container">
+<p class="service-eyebrow">Solutions and Products</p>
+<h2 class="reduced-section-title">Our Solutions and Products</h2>
+<div class="products-grid">
+<article class="product-card"><div class="product-image has-image"><img alt="Smart city solution image" src="assets/service-smart-city.png"/></div>
+<div class="product-content">
+<p class="product-category">Smart Infrastructure</p>
+<h3>Smart City Solutions</h3>
+<ul class="solution-list">
+<li>Urban &amp; Roadway LED Lights Retrofit Program</li>
+<li>TellCo Street Lighting Remote Control Management System (TRLCS)</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/solar-smart-city-solutions/">Learn more →</a>
+</div>
+</article><article class="product-card"><div class="product-image has-image"><img alt="Energy efficiency service models image" src="assets/service-laas.png"/></div>
+<div class="product-content">
+<p class="product-category">Financed Efficiency</p>
+<h3>Energy Efficiency Service Models</h3>
+<ul class="solution-list">
+<li>Energy as a Service — EaaS</li>
+<li>Lighting as a Service — LaaS</li>
+<li>Energy Service Company — ESCO</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/lighting-as-a-service/">Learn more →</a>
+</div>
+</article><article class="product-card"><div class="product-image has-image"><img alt="Consulting, Engineering &amp; Energy Audits" src="assets/service-consulting.png"/></div>
+<div class="product-content">
+<p class="product-category">Efficiency Advisory</p>
+<h3>Consulting, Engineering &amp; Energy Audits</h3>
+<ul class="solution-list">
+<li>Consulting Solutions</li>
+<li>Light Distribution Simulation &amp; Design</li>
+<li>Feasibility Studies</li>
+<li>Energy Audits</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/consultancy-and-training/">Learn more →</a>
+</div>
+</article><article class="product-card"><div class="product-image has-image"><img alt="Solar water pumping systems image" src="assets/service-water-pump.png"/></div>
+<div class="product-content">
+<p class="product-category">Water &amp; Energy Efficiency</p>
+<h3>Solar Water Pumping Systems</h3>
+<ul class="solution-list">
+<li>Solar Powered Water Pumps</li>
+<li>Irrigation Solutions</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/solar-water-pump/">Learn more →</a>
+</div>
+</article><article class="product-card"><div class="product-image has-image"><img alt="Service partners image" src="assets/service-solar-cooling.png"/></div>
+<div class="product-content">
+<p class="product-category">Efficient Cooling</p>
+<h3>Solar Cooling Systems</h3>
+<ul class="solution-list">
+<li>Solar COOL Energy</li>
+<li>Solar Off-Grid System With Dual-Cooling Container</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/solar-cold-storage/">Learn more →</a>
+</div>
+</article><article class="product-card"><div class="product-image has-image"><img alt="Off-grid ELSOL product image" src="assets/service-offgrid-elsol.png"/></div><div class="product-content"><p class="product-category">Scalable Energy Access</p><h3>Off-Grid Power Solutions</h3><ul class="solution-list"><li>Electrical Off-Grid ELSOL</li></ul><a class="learn-more-link" href="https://tellco-europe.com/off-grid-electricity-system/">Learn more →</a></div></article></div>
+</div>
+</section>
+<section class="service-section final-cta-section">
+<div class="service-container final-cta">
+<div>
+<p class="service-eyebrow">Join the Program</p>
+<h2 class="half-size-title">Ready to deliver long-term energy performance with TellCo Europe?</h2>
+<p class="body-copy">Become part of the TellCoExperience XL Service Partner Ecosystem and help customers, communities, businesses, and institutions implement clean-energy, smart-lighting, and energy-efficiency solutions with long-term service support.</p>
+<a class="cta-button" href="#">Apply as a Service Partner</a>
+</div>
+<div class="picture-placeholder has-image"><img alt="Service partner join program image" src="assets/service-join.jpg"/></div>
+</div>
+</section>
+</main>
+  <footer class="site-footer partner-page-footer">
+    <div class="container footer-main">
+      <div>
+        <h2>TellCo Europe</h2>
+        <ul class="contact-list">
+          <li><span aria-hidden="true">⌂</span>TellCo Europe Sagl<br>World Trade Center<br>Via Lugano 13<br>6982 Agno, Ticino<br>Switzerland</li>
+          <li><span aria-hidden="true">☎</span>00 41 91 610 25 28</li>
+          <li><span aria-hidden="true">◎</span>tellco-europe.com</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Solutions</h2>
+        <ul>
+          <li><a href="https://tellco-europe.com/tellcosol-models/">TellCoSOL Models</a></li>
+          <li><a href="https://tellco-europe.com/solar-led-lights/">TellCoLUX Lighting Solutions</a></li>
+          <li><a href="https://tellco-europe.com/solar-containers-consol/">Solar Container ConSOL</a></li>
+          <li><a href="https://tellco-europe.com/solar-water-pump/">Solar Water Pumps</a></li>
+          <li><a href="https://tellco-europe.com/consultancy-and-training/">Consulting and Training</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Partners</h2>
+        <ul>
+          <li><a href="commercial-partners.html">Commercial Partners</a></li>
+          <li><a href="service-partners.html">Service Partners</a></li>
+          <li><a href="influencers-partners.html">Influencer Partners</a></li>
+          <li><a href="affiliates-partners.html">Affiliate &amp; Referral Partners</a></li>
+          <li><a href="strategic-partners.html">Strategic Partners</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html#products">Solutions and Products</a></li>
+          <li><a href="index.html#partner-journey">Partner Journey</a></li>
+          <li><a href="contact.html">Join the Program</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>Copyright © 2024 | TellCo Europe Sagl | All Rights Reserved</span>
+        <div class="social-links" aria-label="Footer social links">
+        <a href="https://www.facebook.com/Tellcoeuropeoffical" aria-label="Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.2V5h-2.8C10.4 5 9 6.8 9 9.4V11H6.8v3.4H9V21h3.7v-6.6h2.8L16 11h-3.3V9.8c0-.9.4-1.3 1.3-1.3Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/tellcoeuropeofficial/" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.7 2.8h8.6c2.7 0 4.9 2.2 4.9 4.9v8.6c0 2.7-2.2 4.9-4.9 4.9H7.7a4.9 4.9 0 0 1-4.9-4.9V7.7c0-2.7 2.2-4.9 4.9-4.9Zm0 2A2.9 2.9 0 0 0 4.8 7.7v8.6a2.9 2.9 0 0 0 2.9 2.9h8.6a2.9 2.9 0 0 0 2.9-2.9V7.7a2.9 2.9 0 0 0-2.9-2.9H7.7Zm4.3 3.7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.1-3.1a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/tellco-europe-sagl-switzerland/" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.7h3.5V21H5V8.7Zm1.8-5.9a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1ZM10.8 8.7h3.3v1.7h.1c.5-.9 1.7-2 3.5-2 3.7 0 4.3 2.4 4.3 5.5V21h-3.5v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-3.5V8.7Z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCJPmVI-EG29OVMQisPmbQMA?view_as=subscriber" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.9-2.1c-.9-.9-1.9-.9-2.4-1C15 3.8 12 3.8 12 3.8h-.1s-3 0-6.3.3c-.5.1-1.5.1-2.4 1-.7.6-.9 2.1-.9 2.1S2 9 2 10.8v1.7c0 1.8.3 3.6.3 3.6s.2 1.5.9 2.1c.9.9 2.1.9 2.6 1 1.9.2 6.2.3 6.2.3s3 0 6.3-.3c.5-.1 1.5-.1 2.4-1 .7-.6.9-2.1.9-2.1s.3-1.8.3-3.6v-1.7c0-1.8-.3-3.6-.3-3.6ZM9.9 14.9V8.7l5.7 3.1-5.7 3.1Z"/></svg>
+        </a>
+        <a href="https://x.com/TellCo__Europe" aria-label="X" class="social-icon social-x">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 10.3 21.8 2h-1.8l-6.6 7.2L8.2 2H2l8 11.1L2 22h1.8l7-7.7 5.6 7.7H22l-7.8-11.7Zm-2.5 2.8-.8-1.1L4.5 3.4h2.8l5.1 6.9.8 1.1 6.8 9.2h-2.8l-5.5-7.5Z"/></svg>
+        </a>
+      </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Commercial Partners — Preferred Layout Preview v5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Georama:wdth,wght@100..150,100..900&amp;family=Inter:wght@400;500&amp;family=Montserrat:wght@600;700&amp;family=Poppins:wght@500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+:root {
+  --red:#e30613;
+  --text:#222;
+  --light:#f4f4f4;
+  --line:#dedede;
+  --hero:#4f6f93;
+  --white:#fff;
+  --max:1180px;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.5;
+}
+.commercial-container {
+  width:min(100% - 48px, var(--max));
+  margin-inline:auto;
+}
+.commercial-section {
+  padding:clamp(58px, 7vw, 92px) 0;
+}
+.commercial-section.is-gray {
+  background:var(--light);
+}
+.commercial-eyebrow {
+  margin:0 0 10px;
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:800;
+  font-size:12px;
+}
+h1,h2,h3,p { margin-top:0; }
+/* New hero — only new section added above the existing page */
+.hero-shell {
+  background:linear-gradient(180deg, #5b7da1 0%, var(--hero) 100%);
+  min-height:820px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-shell .commercial-container {
+  min-height:820px;
+  position:relative;
+}
+.hero-content {
+  padding-top:clamp(110px, 14vw, 150px);
+  max-width:760px;
+  color:#fff;
+}
+.hero-title {
+  margin:0 0 28px;
+  color:#fff;
+  font-family:"Georama","Roboto Condensed",Arial,sans-serif;
+  font-weight:500;
+  font-size:clamp(56px, 8vw, 86px);
+  line-height:.96;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+}
+.hero-subtitle {
+  margin:0 0 42px;
+  color:#fff;
+  font-family:"Georama","Roboto Condensed",Arial,sans-serif;
+  font-weight:700;
+  font-size:clamp(20px, 2.2vw, 28px);
+  line-height:1.35;
+  max-width:980px;
+}
+.hero-buttons {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  max-width:420px;
+}
+.hero-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:70px;
+  padding:18px 28px;
+  text-decoration:none;
+  font-family:"Georama","Roboto Condensed",Arial,sans-serif;
+  font-weight:700;
+  font-size:16px;
+  line-height:1;
+  letter-spacing:.01em;
+}
+.hero-button.primary {
+  background:var(--red);
+  color:#fff;
+  border:1px solid var(--red);
+}
+.hero-button.secondary {
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.7);
+}
+.picture-1-tag {
+  position:absolute;
+  right:28px;
+  bottom:18px;
+  min-width:510px;
+  max-width:60%;
+  padding:16px 18px;
+  border:1px dashed rgba(255,255,255,.75);
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  font-size:14px;
+  text-align:center;
+}
+.section-title {
+  font-size:clamp(42px, 6vw, 70px);
+  line-height:0.98;
+  letter-spacing:-.03em;
+  margin-bottom:24px;
+}
+h2 {
+  font-size:clamp(34px, 4vw, 54px);
+  line-height:1.03;
+  letter-spacing:-.035em;
+  margin-bottom:20px;
+}
+h3 {
+  font-size:22px;
+  line-height:1.12;
+  margin-bottom:12px;
+}
+.body-copy {
+  color:#444;
+  font-size:16px;
+  line-height:1.7;
+}
+.two-column {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:clamp(34px, 5vw, 72px);
+  align-items:center;
+}
+.two-column.reverse {
+  grid-template-columns:.95fr 1.05fr;
+}
+.picture-placeholder {
+  min-height:260px;
+  background:linear-gradient(135deg,#ededed,#fafafa);
+  border:1px dashed #b7b7b7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  color:#777;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.04em;
+}
+.portfolio-button,
+.cta-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:14px 22px;
+  background:var(--red);
+  color:#fff;
+  border:1px solid var(--red);
+  text-decoration:none;
+  font-family:"Georama","Roboto Condensed",Arial,sans-serif;
+  font-weight:700;
+  font-size:14px;
+  line-height:1;
+  letter-spacing:.01em;
+}
+.tier-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:22px;
+  margin-top:32px;
+}
+.tier-card,
+.support-card,
+.product-card {
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+}
+.tier-card {
+  padding:26px;
+  border-top:5px solid var(--red);
+}
+.support-grid {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:18px;
+  margin-top:32px;
+}
+.support-card {
+  padding:28px;
+}
+.check-list {
+  padding-left:20px;
+  margin:18px 0 0;
+}
+.check-list li {
+  margin-bottom:8px;
+}
+.matrix-table-wrap {
+  overflow-x:auto;
+  border:1px solid #d8d8d8;
+  background:#fff;
+  box-shadow:0 16px 40px rgba(0,0,0,.08);
+  margin-top:24px;
+}
+.matrix-table {
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  min-width:1000px;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.matrix-table .benefits-col { width:28%; }
+.matrix-table .tier-col { width:18%; }
+.matrix-table th,
+.matrix-table td {
+  border:1px solid #202020;
+  padding:12px 14px;
+  text-align:center;
+  vertical-align:middle;
+  overflow-wrap:anywhere;
+}
+.matrix-table thead th {
+  background:var(--red);
+  color:#fff;
+  font-weight:800;
+  font-size:1rem;
+}
+.matrix-table tbody th {
+  text-align:left;
+  font-weight:700;
+  color:#222;
+  background:#fff;
+}
+.matrix-table .highlight-row th,
+.matrix-table .highlight-row td {
+  background:var(--red);
+  color:#fff;
+  font-weight:800;
+}
+.matrix-note {
+  margin:12px 0 0;
+  color:#555;
+  font-size:.92rem;
+  line-height:1.45;
+}
+.products-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+  margin-top:30px;
+}
+.product-card {
+  border-top:5px solid var(--red);
+}
+.product-image {
+  min-height:190px;
+  background:linear-gradient(135deg,#ededed,#fafafa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#777;
+  font-size:14px;
+  text-align:center;
+  padding:16px;
+}
+.product-content {
+  padding:24px;
+}
+.product-category {
+  color:var(--red);
+  text-transform:uppercase;
+  font-weight:800;
+  letter-spacing:.12em;
+  font-size:12px;
+  margin-bottom:10px;
+}
+.final-cta {
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  gap:64px;
+  align-items:center;
+}
+.final-cta-section {
+  background:#182534;
+}
+.final-cta-section .commercial-eyebrow,
+.final-cta-section .half-size-title,
+.final-cta-section .body-copy {
+  color:#fff;
+}
+@media (max-width: 960px) {
+  .two-column,
+  .two-column.reverse,
+  .tier-grid,
+  .support-grid,
+  .products-grid,
+  .final-cta {
+    grid-template-columns:1fr;
+  }
+  .hero-shell,
+  .hero-shell .commercial-container {
+    min-height:auto;
+  }
+  .hero-content {
+    padding-top:90px;
+    padding-bottom:180px;
+  }
+  .picture-1-tag {
+    right:24px;
+    left:24px;
+    max-width:none;
+    min-width:0;
+  }
+}
+
+/* Title size update only: reduce selected section titles by 30%. */
+.reduced-section-title {
+  font-size: clamp(26.4px, 3.08vw, 41.8px) !important;
+  line-height: 1.08;
+}
+
+
+/* One-change update: only these two titles are half their current font size. */
+.half-size-title {
+  font-size: clamp(17px, 2vw, 27px) !important;
+}
+
+
+/* Benefits card style update only for Resellers and Franchise sections. */
+.partner-benefits-title {
+  margin: 22px 0 14px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.partner-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 0;
+}
+.partner-benefit-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-left: 4px solid #d71920;
+  border-radius: 8px;
+  padding: 16px 18px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Solutions and Products card update only. */
+.solutions-section .products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+}
+.solutions-section .product-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-top: 5px solid var(--red);
+  border-radius: 8px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.solutions-section .product-card.featured-product-card {
+  grid-column: span 2;
+}
+.solutions-section .product-content {
+  padding: 26px;
+}
+.solutions-section .product-category {
+  color: var(--red);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .12em;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.solutions-section .product-card h3 {
+  margin-bottom: 18px;
+}
+.solutions-section .solution-group {
+  padding: 16px 0;
+  border-top: 1px solid #eeeeee;
+}
+.solutions-section .solution-group:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+.solutions-section .solution-group-title {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 800;
+}
+.solutions-section .solution-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.solutions-section .solution-list li {
+  margin-bottom: 6px;
+}
+.solutions-section .learn-more-link {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--red);
+  font-weight: 800;
+  text-decoration: none;
+}
+.solutions-section .learn-more-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 960px) {
+  .solutions-section .product-card.featured-product-card {
+    grid-column: span 1;
+  }
+}
+
+
+/* Picture placeholder update only for Solutions and Products cards. */
+.solutions-section .product-image-placeholder {
+  width: 100%;
+  min-height: 92px;
+  border: 1.5px dashed #c9c9c9;
+  background: #f7f7f7;
+  color: #777;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0 0 18px;
+}
+.solutions-section .solution-group-with-placeholder {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 18px;
+  align-items: start;
+}
+.solutions-section .solution-group-with-placeholder .product-image-placeholder {
+  min-height: 120px;
+  margin: 2px 0 0;
+}
+@media (max-width: 720px) {
+  .solutions-section .solution-group-with-placeholder {
+    grid-template-columns: 1fr;
+  }
+  .solutions-section .solution-group-with-placeholder .product-image-placeholder {
+    min-height: 90px;
+  }
+}
+
+
+.solutions-section .product-card .product-image-placeholder.lower-placeholder {
+  margin: 14px 0 0;
+  min-height: 86px;
+}
+
+/* Why Partner with TellCo Europe cards layout update only */
+.why-partner-section .why-partner-header {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+.why-partner-section .why-partner-header h2 {
+  margin-bottom: 16px;
+}
+.why-partner-section .why-partner-intro {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+}
+.why-partner-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.why-partner-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  padding: 26px 24px 24px;
+  min-height: 100%;
+}
+.why-partner-card .why-partner-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #f7eeee;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.why-partner-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #222;
+}
+.why-partner-card p {
+  margin: 0;
+  color: #555;
+  line-height: 1.68;
+}
+@media (max-width: 980px) {
+  .why-partner-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Reseller and Franchise benefits two-column layout update only */
+.resellers-section .partner-benefits-grid,
+.franchise-section .partner-benefits-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 760px) {
+  .resellers-section .partner-benefits-grid,
+  .franchise-section .partner-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Franchise benefits one-column layout update only */
+.franchise-section .partner-benefits-grid {
+  grid-template-columns: 1fr;
+}
+
+
+/* Resellers benefits one-column layout update only */
+.resellers-section .partner-benefits-grid {
+  grid-template-columns: 1fr;
+}
+
+
+
+
+/* Global page font and text color update only */
+#commercial-partners-page {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(41, 41, 41);
+}
+#commercial-partners-page * {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* Requested heading size update only */
+.intro-section .commercial-eyebrow,
+.tiers-section .commercial-eyebrow,
+.resellers-section .commercial-eyebrow,
+.franchise-section .commercial-eyebrow,
+.matrix-section .commercial-eyebrow,
+.solutions-section .commercial-eyebrow,
+.final-cta-section .commercial-eyebrow {
+  font-size: 13.2px;
+}
+
+.intro-section .reduced-section-title,
+.tiers-section .reduced-section-title,
+.resellers-section .reduced-section-title,
+.franchise-section .reduced-section-title,
+.matrix-section .reduced-section-title,
+.solutions-section .reduced-section-title {
+  font-size: clamp(23.76px, 2.772vw, 37.62px) !important;
+}
+
+
+/* Match Why Partner and final CTA heading size to Two paths heading update only */
+.why-partner-section .half-size-title,
+.final-cta-section .half-size-title {
+  font-size: clamp(23.76px, 2.772vw, 37.62px) !important;
+  line-height: 1.08;
+}
+
+
+
+/* Hero Georama typography exact update only */
+#commercial-partners-page .hero-title {
+  font-family: "Georama", sans-serif !important;
+  font-weight: 500;
+  font-variation-settings: "wdth" 145, "wght" 500;
+}
+
+#commercial-partners-page .hero-subtitle,
+#commercial-partners-page .hero-button {
+  font-family: "Georama", sans-serif !important;
+  font-weight: 700;
+  font-variation-settings: "wdth" 135, "wght" 700;
+}
+
+
+
+/* Final Commercial Partners PNG hero with clickable button areas only */
+.commercial-hero-final {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.commercial-hero-final__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commercial-hero-final__content {
+  position: absolute;
+  z-index: 4;
+  left: calc(clamp(48px, 9.5vw, 170px) - 15px);
+  top: clamp(70px, 14%, 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: min(760px, calc(100% - clamp(96px, 19vw, 340px)));
+  color: #1f1f1f;
+  text-align: left;
+}
+
+.commercial-hero-final__title {
+  max-width: none;
+  margin: 0;
+  color: #1f1f1f;
+  font-family: "Georama", "Roboto Condensed", Arial, sans-serif;
+  font-size: 54.4px;
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  font-variation-settings: "wdth" 145, "wght" 500;
+}
+
+.commercial-hero-final__subtitle {
+  max-width: 680px;
+  margin: 18px 0 0;
+  color: #1f1f1f;
+  font-family: "Georama", "Roboto Condensed", Arial, sans-serif;
+  font-size: 20.4px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  font-variation-settings: "wdth" 135, "wght" 400;
+  font-stretch: 135%;
+}
+
+.commercial-hero-final__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: clamp(240px, 22vw, 300px);
+  max-width: 100%;
+  gap: 25px;
+  margin-top: 72px;
+}
+
+.commercial-hero-final__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 14px 32px;
+  border: 1px solid #1f1f1f;
+  border-radius: 0;
+  font-family: "Georama", "Roboto Condensed", Arial, sans-serif;
+  font-size: 13.6px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variation-settings: "wdth" 135, "wght" 400;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.commercial-hero-final__button--primary {
+  border-color: var(--red);
+  background: var(--red);
+  color: #fff;
+}
+
+.commercial-hero-final__button--secondary {
+  background: rgba(255, 255, 255, 0.78);
+  color: #1f1f1f;
+}
+
+@media (max-width: 1199px) {
+  .commercial-hero-final__content {
+    left: calc(clamp(32px, 6vw, 72px) - 15px);
+    width: calc(100% - 96px);
+  }
+
+  .commercial-hero-final__title {
+    font-size: 38.4px;
+    line-height: 1;
+    letter-spacing: 0.015em;
+    font-variation-settings: "wdth" 128, "wght" 500;
+  }
+
+  .commercial-hero-final__subtitle {
+    font-size: 18.7px;
+    letter-spacing: 0.008em;
+  }
+
+  .commercial-hero-final__button {
+    font-size: 12.75px;
+    letter-spacing: 0.008em;
+  }
+}
+
+@media (max-width: 809px) {
+  .commercial-hero-final {
+    min-height: 560px;
+  }
+
+  .commercial-hero-final__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% center;
+  }
+
+  .commercial-hero-final__content {
+    left: 24px;
+    top: 72px;
+    width: calc(100% - 48px);
+  }
+
+  .commercial-hero-final__title {
+    font-size: 21.6px;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: 0;
+    font-variation-settings: "wdth" 100, "wght" 600;
+  }
+
+  .commercial-hero-final__subtitle {
+    max-width: 350px;
+    margin-top: 12px;
+    font-size: 14.45px;
+    letter-spacing: 0.006em;
+  }
+
+  .commercial-hero-final__actions {
+    width: 240px;
+    margin-top: 28px;
+    gap: 22px;
+  }
+
+  .commercial-hero-final__button {
+    padding: 13px 26px;
+    font-size: 11.9px;
+    letter-spacing: 0.006em;
+    font-variation-settings: "wdth" 125, "wght" 400;
+  }
+}
+
+.commercial-hero-final__hotspot {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  text-decoration: none;
+}
+
+.commercial-hero-final__hotspot:focus-visible {
+  outline: 3px solid rgba(227, 6, 19, 0.65);
+  outline-offset: 3px;
+}
+
+/* Coordinates match the visible buttons in commercial-hero-final.png */
+.commercial-hero-final__hotspot--tiers {
+  left: 5.45%;
+  top: 49.39%;
+  width: 12.24%;
+  height: 6.42%;
+}
+
+.commercial-hero-final__hotspot--resellers {
+  left: 5.45%;
+  top: 57.63%;
+  width: 12.24%;
+  height: 6.30%;
+}
+
+.commercial-hero-final__hotspot--franchise {
+  left: 5.45%;
+  top: 65.74%;
+  width: 12.24%;
+  height: 6.30%;
+}
+
+#commercial-partnership-structure,
+#resellers,
+#franchise-model {
+  scroll-margin-top: 24px;
+}
+
+
+/* Resellers and Franchise cards layout update only — match Service Partners card grid */
+.resellers-section .commercial-section-intro-row,
+.franchise-section .commercial-section-intro-row {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(34px, 5vw, 72px);
+  align-items: center;
+  margin-bottom: 42px;
+}
+
+.franchise-section .commercial-section-intro-row.reverse {
+  grid-template-columns: .95fr 1.05fr;
+}
+
+.resellers-section .partner-benefits-title,
+.franchise-section .partner-benefits-title {
+  margin: 0 0 14px;
+}
+
+.resellers-section .partner-benefits-grid,
+.franchise-section .partner-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px;
+  margin-top: 0;
+}
+
+@media (max-width: 960px) {
+  .resellers-section .commercial-section-intro-row,
+  .franchise-section .commercial-section-intro-row,
+  .franchise-section .commercial-section-intro-row.reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .resellers-section .partner-benefits-grid,
+  .franchise-section .partner-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* Rectangle corners update only + specified commercial page images */
+.hero-button,
+.portfolio-button,
+.cta-button,
+.tier-card,
+.support-card,
+.product-card,
+.partner-benefit-card,
+.picture-placeholder,
+.picture-frame,
+.picture-frame img,
+.product-image-placeholder,
+.product-image-placeholder img,
+.featured-product-card,
+article,
+button,
+a[class*="button"] {
+  border-radius: 0 !important;
+}
+
+.picture-frame {
+  min-height: 260px;
+  padding: 0;
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+  overflow: hidden;
+  display: block;
+}
+
+.picture-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+}
+
+
+
+/* Solutions and Products image and link update only */
+.solutions-section .product-image-placeholder.product-image-filled {
+  padding: 0;
+  min-height: auto;
+  border: 1px solid #d8d8d8;
+  background: #ffffff;
+  overflow: hidden;
+  color: transparent;
+}
+.solutions-section .product-image-placeholder.product-image-filled.image-contain {
+  background: #ffffff;
+}
+.solutions-section .product-image-placeholder.product-image-filled img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.solutions-section .product-image-placeholder.product-image-filled.image-cover img {
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+.solutions-section .product-image-placeholder.product-image-filled.image-contain img {
+  object-fit: contain;
+  aspect-ratio: 4 / 3;
+  background: #ffffff;
+  padding: 8px;
+}
+.solutions-section .product-image-placeholder.product-image-filled.paygo-image img {
+  aspect-ratio: 32 / 19;
+  padding: 0;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+/* Reduce spacing only between Commercial Partner Ecosystem and Commercial Partnership Structure */
+.intro-section {
+  padding-bottom: clamp(28px, 3vw, 40px) !important;
+}
+
+.tiers-section {
+  padding-top: clamp(28px, 3vw, 40px) !important;
+}
+
+
+/* Reduce spacing only between Franchise Model and Commercial Partner Tiers */
+.franchise-section {
+  padding-bottom: clamp(28px, 3vw, 40px) !important;
+}
+
+.matrix-section {
+  padding-top: clamp(28px, 3vw, 40px) !important;
+}
+
+
+/* Add one modest space only between Franchise Model and Commercial Partner Tiers */
+.franchise-section {
+  padding-bottom: clamp(36px, 4vw, 52px) !important;
+}
+
+.matrix-section {
+  padding-top: clamp(36px, 4vw, 52px) !important;
+}
+
+.franchise-showroom {
+  margin: clamp(32px, 4vw, 48px) 0 0;
+}
+
+.franchise-showroom img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="topbar" aria-label="TellCo utility links">
+    <div class="container topbar-inner">
+      <div class="social-links" aria-label="Social links">
+        <a href="https://www.facebook.com/Tellcoeuropeoffical" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.2V5h-2.8C10.4 5 9 6.8 9 9.4V11H6.8v3.4H9V21h3.7v-6.6h2.8L16 11h-3.3V9.8c0-.9.4-1.3 1.3-1.3Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/tellcoeuropeofficial/" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.7 2.8h8.6c2.7 0 4.9 2.2 4.9 4.9v8.6c0 2.7-2.2 4.9-4.9 4.9H7.7a4.9 4.9 0 0 1-4.9-4.9V7.7c0-2.7 2.2-4.9 4.9-4.9Zm0 2A2.9 2.9 0 0 0 4.8 7.7v8.6a2.9 2.9 0 0 0 2.9 2.9h8.6a2.9 2.9 0 0 0 2.9-2.9V7.7a2.9 2.9 0 0 0-2.9-2.9H7.7Zm4.3 3.7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.1-3.1a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/tellco-europe-sagl-switzerland/" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.7h3.5V21H5V8.7Zm1.8-5.9a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1ZM10.8 8.7h3.3v1.7h.1c.5-.9 1.7-2 3.5-2 3.7 0 4.3 2.4 4.3 5.5V21h-3.5v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-3.5V8.7Z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCJPmVI-EG29OVMQisPmbQMA?view_as=subscriber" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.9-2.1c-.9-.9-1.9-.9-2.4-1C15 3.8 12 3.8 12 3.8h-.1s-3 0-6.3.3c-.5.1-1.5.1-2.4 1-.7.6-.9 2.1-.9 2.1S2 9 2 10.8v1.7c0 1.8.3 3.6.3 3.6s.2 1.5.9 2.1c.9.9 2.1.9 2.6 1 1.9.2 6.2.3 6.2.3s3 0 6.3-.3c.5-.1 1.5-.1 2.4-1 .7-.6.9-2.1.9-2.1s.3-1.8.3-3.6v-1.7c0-1.8-.3-3.6-.3-3.6ZM9.9 14.9V8.7l5.7 3.1-5.7 3.1Z"/></svg>
+        </a>
+        <a href="https://x.com/TellCo__Europe" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on X" class="social-icon social-x">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 10.3 21.8 2h-1.8l-6.6 7.2L8.2 2H2l8 11.1L2 22h1.8l7-7.7 5.6 7.7H22l-7.8-11.7Zm-2.5 2.8-.8-1.1L4.5 3.4h2.8l5.1 6.9.8 1.1 6.8 9.2h-2.8l-5.5-7.5Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="TellCoExperience XL home">
+        <img src="assets/logo.png" alt="TellCo Europe Switzerland" class="brand-logo">
+      </a>
+
+      <button class="mobile-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="visually-hidden">Open navigation</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" data-nav aria-label="Primary navigation">
+        <a href="index.html">TellCoExperience XL</a>
+        <a href="commercial-partners.html" aria-current="page">Commercial Partners</a>
+        <a href="service-partners.html">Service Partners</a>
+        <a href="influencers-partners.html">Influencers</a>
+        <a href="affiliates-partners.html">Affiliates</a>
+        <a href="strategic-partners.html">Strategic Partners</a>
+        <a href="industries.html">Industries</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+<main id="main" class="commercial-partners-page">
+<section aria-label="Commercial Partners hero" class="hero-shell commercial-hero-final">
+<img alt="Commercial Partners — Build market reach, unlock sales opportunities, and grow with a structured commercial partnership model." class="commercial-hero-final__image" src="assets/commercial-hero.png"/>
+<div class="commercial-hero-final__content">
+<h1 class="commercial-hero-final__title">Commercial<br>Partners</h1>
+<p class="commercial-hero-final__subtitle">Expand your reach. Grow your sales.</p>
+<div class="commercial-hero-final__actions">
+<a class="commercial-hero-final__button commercial-hero-final__button--primary" href="#commercial-partnership-structure">Explore Partner Tiers</a>
+<a class="commercial-hero-final__button commercial-hero-final__button--secondary" href="#resellers">Explore Reseller Partners</a>
+<a class="commercial-hero-final__button commercial-hero-final__button--secondary" href="#franchise-model">Explore Franchise Models</a>
+</div>
+</div>
+</section>
+<section class="commercial-section is-gray market-section why-partner-section">
+<div class="commercial-container">
+<div class="why-partner-header">
+<h2 class="half-size-title">Why Partner with TellCo Europe?</h2>
+<p class="why-partner-intro">TellCo Europe helps partners move beyond transactional product sales by giving them the tools to sell broader, higher‑value solutions across lighting, solar, efficiency, and distributed‑energy applications.</p>
+</div>
+<div class="why-partner-cards">
+<article class="why-partner-card">
+<div class="why-partner-number">1</div>
+<h3>Growing Market</h3>
+<p>The global LED lighting market is projected to reach USD 130–133 billion by 2030, with indoor and outdoor solar LED segments expanding rapidly. This gives commercial partners a large and growing market for TellCo’s lighting and solar portfolios.</p>
+</article>
+<article class="why-partner-card">
+<div class="why-partner-number">2</div>
+<h3>Real Solutions</h3>
+<p>TellCo enables partners to move beyond simple product reselling and offer complete solution based packages across LED indoor, outdoor, and public lighting; solar PV; off grid systems; and smart energy applications.</p>
+</article>
+<article class="why-partner-card">
+<div class="why-partner-number">3</div>
+<h3>Revenue Potential</h3>
+<p>TellCo Europe’s commercial partner model is designed to help channel partners accelerate sales, strengthen customer credibility, and grow revenue across multiple solution categories.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="commercial-section intro-section">
+<div class="commercial-container two-column">
+<div>
+<p class="commercial-eyebrow">Commercial Partner Ecosystem</p>
+<h1 class="section-title reduced-section-title">Two paths for local market growth</h1>
+<p class="body-copy">TellCo Europe’s commercial partner model is organized around two main pathways: reseller-based partnerships and franchise partnerships. Resellers support market access, customer acquisition, and product distribution. Franchise partners operate with a broader local business model that may include showroom presence, CRM access, e-commerce support, and country or regional representation.</p>
+</div>
+<div class="picture-placeholder picture-frame"><img alt="Commercial partner ecosystem photo" src="assets/commercial-introduction-current.jpg"/></div>
+</div>
+</section>
+<section class="commercial-section tiers-section" id="commercial-partnership-structure">
+<div class="commercial-container">
+<p class="commercial-eyebrow">Commercial Partnership Structure</p>
+<h2 class="reduced-section-title">Choose the right level of commercial partnership</h2>
+<div class="tier-grid">
+<article class="tier-card">
+<h3>Silver Reseller</h3>
+<p class="body-copy">Entry-level path for agents and resellers working on a flexible per-deal basis.</p>
+</article>
+<article class="tier-card">
+<h3>Gold Reseller</h3>
+<p class="body-copy">Growth-oriented reseller tier with training, marketing materials, and sales support.</p>
+</article>
+<article class="tier-card">
+<h3>Platinum Distributor</h3>
+<p class="body-copy">Distributor-level partnership with higher sales volume and stock commitments.</p>
+</article>
+<article class="tier-card">
+<h3>Franchise</h3>
+<p class="body-copy">Comprehensive local representation with showroom, CRM, webshop, and structured support.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="commercial-section is-gray resellers-section" id="resellers">
+<div class="commercial-container"><div class="commercial-section-intro-row two-column"><div>
+<p class="commercial-eyebrow">Resellers</p>
+<h2 class="reduced-section-title">Resellers, distributors, dealers, and agents</h2>
+<p class="body-copy">Reseller-based commercial partners help TellCo Europe reach customers through trusted local sales channels.</p>
+</div><div class="picture-placeholder picture-frame"><img alt="Commercial resellers photo" src="assets/commercial-resellers-current.jpg"/></div></div><h3 class="partner-benefits-title">Benefits</h3><div class="partner-benefits-grid"><div class="partner-benefit-card"><strong>Attractive commissions</strong> — Earnings of up to 23% of total sales achieved by the reseller partner, depending on program level.</div><div class="partner-benefit-card"><strong>Strategic support and training</strong> — Comprehensive product training, design‑simulation guidance, project‑planning support, and technology workshops to build strong technical capabilities.</div><div class="partner-benefit-card"><strong>Discounts, rebates and incentives</strong> — Resellers benefit from pricing discounts, tier‑based rebates, and other incentives designed to improve margins and support long‑term growth.</div><div class="partner-benefit-card"><strong>Sales and marketing support</strong> — Assistance with proposals, pre‑sales engineering, sales presentations, and creation of marketing materials to strengthen commercial performance.</div><div class="partner-benefit-card"><strong>Short, renewable agreement</strong> — Initial one year agreement, renewable after performance assessment, giving partners flexibility and a clear path for continued collaboration.</div><div class="partner-benefit-card"><strong>Brand reputation</strong> — Operate under TellCo Europe’s global brand, recognized for expertise and a broad range of LED and solar solutions.</div></div></div>
+</section>
+<section class="commercial-section franchise-section" id="franchise-model">
+<div class="commercial-container"><div class="commercial-section-intro-row two-column reverse"><div class="picture-placeholder picture-frame"><img alt="Commercial franchise photo" src="assets/commercial-franchise-current.png"/></div><div>
+<p class="commercial-eyebrow">Franchise Model</p>
+<h2 class="reduced-section-title">Franchise: Build a stronger local business presence</h2>
+<p class="body-copy">The SolarLED Franchise model is designed for qualified entrepreneurs and companies that want to build a stronger local business presence around TellCo Europe’s solar, LED, off-grid power, and energy-efficiency solutions.</p>
+</div></div><h3 class="partner-benefits-title">Benefits</h3><div class="partner-benefits-grid"><div class="partner-benefit-card"><strong>Structured franchise models for solar and LED</strong> — Dedicated franchise frameworks provide a proven operational blueprint for establishing and expanding local solar and LED operations.</div><div class="partner-benefit-card"><strong>Exclusive territories or segments</strong> — Franchise agreements define protected territories or market segments, ensuring clear market boundaries and strong local positioning.</div><div class="partner-benefit-card"><strong>Strategic planning and project support</strong> — Assistance with technical project design, light‑distribution simulations, and operational planning for solar and LED deployments.</div><div class="partner-benefit-card"><strong>Showroom experience</strong> — Design, implementation, and support for a dedicated TellCo showroom that showcases solar and LED solutions and strengthens local market presence.</div><div class="partner-benefit-card"><strong>Comprehensive training and capacity building</strong> — Access to training sessions, workshops, and seminars covering solar and LED technologies, franchise operations, and sales development.</div><div class="partner-benefit-card"><strong>Digital presence &amp; marketing activation</strong> — Coordinated marketing campaigns and an exclusive TellCo Europe website with integrated e‑commerce to drive visibility and lead generation.</div><div class="partner-benefit-card"><strong>Financial and sustainability advisory</strong> — Expert guidance on financial planning, decarbonization strategies, and environmental compliance to help you build a strong and profitable franchise.</div><div class="partner-benefit-card"><strong>Brand reputation</strong> — Operate under an established international brand recognized for renewable energy, solar lighting, off‑grid systems, and consultancy services.</div></div></div>
+<div class="commercial-container"><figure class="franchise-showroom"><img alt="TellCo Europe franchise showroom concept" src="assets/franchise-showroom2.png"/></figure></div>
+</section>
+<section class="commercial-section matrix-section">
+<div class="commercial-container">
+<p class="commercial-eyebrow">Commercial Partner Tiers</p>
+<h2 class="reduced-section-title">Partner Program Tier Comparison</h2>
+<div class="matrix-table-wrap">
+<table class="matrix-table">
+<colgroup>
+<col class="benefits-col"/>
+<col class="tier-col"/>
+<col class="tier-col"/>
+<col class="tier-col"/>
+<col class="tier-col"/>
+</colgroup>
+<thead><tr>
+<th>Benefits</th>
+<th>Silver Reseller</th>
+<th>Gold Reseller</th>
+<th>Platinum Reseller</th>
+<th>TellCo Europe Franchise</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row">Standard discount on goods (%)</th>
+<td>2 to 5</td>
+<td>10</td>
+<td>15</td>
+<td>20</td>
+</tr>
+<tr>
+<th scope="row">Rebate rate at target revenue (%)</th>
+<td>—</td>
+<td>—</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr>
+<th scope="row">Extra marketing rebate (%)</th>
+<td>—</td>
+<td>—</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<th scope="row">Minimum Gross Margin (%)</th>
+<td>2 to 5</td>
+<td>10</td>
+<td>20</td>
+<td>25–30</td>
+</tr>
+<tr>
+<th scope="row">Exclusive territory</th>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<th scope="row">Franchise royalty fee (%)</th>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>3</td>
+</tr>
+<tr>
+<th scope="row">Contract duration</th>
+<td>—</td>
+<td>1</td>
+<td>1 to 3</td>
+<td>3</td>
+</tr>
+<tr class="highlight-row">
+<th scope="row">Minimum required order per year (EUR)</th>
+<td>—</td>
+<td>350,000–1,000,000</td>
+<td>1,000,000–5,000,000</td>
+<td>&gt; 5,000,000</td>
+</tr>
+<tr>
+<th scope="row">Minimum required stock</th>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<th scope="row">Sales target</th>
+<td>Per deal</td>
+<td>Per deal</td>
+<td>Per deal</td>
+<td>Per deal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="matrix-note">This matrix is a high-level comparison. Final terms may vary by market, project type, partner qualification, and signed agreement.</p>
+</div>
+</section>
+<section class="commercial-section is-gray solutions-section">
+<div class="commercial-container">
+<p class="commercial-eyebrow">Solutions and Products</p>
+<h2 class="reduced-section-title">Our Solutions and Products</h2>
+<div class="products-grid">
+<article class="product-card featured-product-card">
+<div class="product-content">
+<p class="product-category">Efficient Lighting</p>
+<h3>LED Lighting Solutions</h3>
+<div class="solution-group">
+<div class="solution-group-with-placeholder">
+<div>
+<h4 class="solution-group-title">Solar TellCoLUX Lighting Solutions</h4>
+<ul class="solution-list">
+<li>Solar LED Street Lights</li>
+<li>Solar LED Park Lights</li>
+<li>Solar LED Billboard Lights</li>
+<li>Solar LED Public Safety Lighting</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/solar-led-lights/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+<div class="product-image-placeholder product-image-filled image-contain"><img alt="Solar TellCoLUX Lighting Solutions" loading="lazy" src="assets/commercial-telllux2.png"/></div>
+</div>
+</div>
+<div class="solution-group">
+<div class="solution-group-with-placeholder">
+<div>
+<h4 class="solution-group-title">TellCoLED Indoor LED Solutions</h4>
+<ul class="solution-list">
+<li>LED Ceiling Down Lights</li>
+<li>LED High Bay Lights</li>
+<li>LED Bulbs and Tubes Lights</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/indoor-led-light/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+<div class="product-image-placeholder product-image-filled image-contain"><img alt="TellCoLED Indoor LED Solutions" loading="lazy" src="assets/indoor_led.png"/></div>
+</div>
+</div>
+<div class="solution-group">
+<div class="solution-group-with-placeholder">
+<div>
+<h4 class="solution-group-title">TellCoLED Outdoor LED Solutions</h4>
+<ul class="solution-list">
+<li>LED Street Lights Luminaries</li>
+<li>LED Floodlights</li>
+<li>LED Urban Residential &amp; Landscape Lights</li>
+<li>LED Stadium Lights</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/outdoor-led-lights/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+<div class="product-image-placeholder product-image-filled image-contain"><img alt="TellCoLED Outdoor LED Solutions" loading="lazy" src="assets/commercial_outdoor_led.png"/></div>
+</div>
+</div>
+</div>
+</article>
+<article class="product-card">
+<div class="product-content">
+<div class="product-image-placeholder product-image-filled image-cover"><img alt="Solar Home and PV Systems" loading="lazy" src="assets/solar_home_pv.png"/></div>
+<p class="product-category">Clean Power</p>
+<h3>Solar Home &amp; PV Systems</h3>
+<ul class="solution-list">
+<li>TellCoSOL ZERMATT Solar Home System</li>
+<li>Pay As You Go Finance</li>
+<li>Solar PV</li>
+<li>Off-Grid LED Add-On Products</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/tellcosol-models/" rel="noopener noreferrer" target="_blank">Learn more →</a><div class="product-image-placeholder product-image-filled image-contain lower-placeholder paygo-image"><img alt="Added solar home system products" loading="lazy" src="assets/commercial_added_products.png"/></div>
+</div>
+</article>
+<article class="product-card">
+<div class="product-content">
+<div class="product-image-placeholder product-image-filled image-contain"><img alt="Off-Grid Power Solutions" loading="lazy" src="assets/commercial-offgrid-elsol.png"/></div>
+<p class="product-category">Scalable Energy Access</p>
+<h3>Off-Grid Power Solutions</h3>
+<ul class="solution-list">
+<li>Electrical Off-Grid ELSOL</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/off-grid-electricity-system/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+</article>
+<article class="product-card">
+<div class="product-content">
+<div class="product-image-placeholder product-image-filled image-cover"><img alt="ConSOL Off-Grid Containers" loading="lazy" src="assets/commercial_container_latest.jpg"/></div>
+<p class="product-category">Off-Grid Energy</p>
+<h3>ConSOL Off-Grid Containers</h3>
+<ul class="solution-list">
+<li>Solar Container ConSOL</li>
+<li>ConSOL Clinic Applications</li>
+<li>Smart Camps and Communities</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/solar-containers-consol/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+</article>
+<article class="product-card">
+<div class="product-content">
+<div class="product-image-placeholder product-image-filled image-cover"><img alt="Smart City Solutions" loading="lazy" src="assets/commercial-smart-city5.png"/></div>
+<p class="product-category">Smart Infrastructure</p>
+<h3>Smart City Solutions</h3>
+<ul class="solution-list">
+<li>Urban &amp; Roadway LED Lights Retrofit Program</li>
+<li>TellCo Street Lighting Remote Control Management System (TRLCS)</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/solar-smart-city-solutions/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+</article>
+<article class="product-card">
+<div class="product-content">
+<div class="product-image-placeholder product-image-filled image-cover"><img alt="Energy Efficiency Service Models" loading="lazy" src="assets/efficiency_models.png"/></div>
+<p class="product-category">Financed Efficiency</p>
+<h3>Energy Efficiency Service Models</h3>
+<ul class="solution-list">
+<li>Energy as a Service — EaaS</li>
+<li>Lighting as a Service — LaaS</li>
+<li>Energy Service Company — ESCO</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/lighting-as-a-service/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+</article>
+<article class="product-card">
+<div class="product-content">
+<div class="product-image-placeholder product-image-filled image-cover"><img alt="Consulting, Engineering and Energy Audits" loading="lazy" src="assets/consulting_training.png"/></div>
+<p class="product-category">Efficiency Advisory</p>
+<h3>Consulting, Engineering &amp; Energy Audits</h3>
+<ul class="solution-list">
+<li>Consulting Services</li>
+<li>Light Distribution Simulation &amp; Design</li>
+<li>Feasibility Studies</li>
+<li>Energy Audits</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/consultancy-and-training/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+</article>
+<article class="product-card">
+<div class="product-content">
+<div class="product-image-placeholder product-image-filled image-contain"><img alt="Other Solar Power Products" loading="lazy" src="assets/other_products.png"/></div>
+<p class="product-category">Solar Products</p>
+<h3>Other Solar Power Products</h3>
+<ul class="solution-list">
+<li>LVC Cables</li>
+<li>Solar Water Heaters</li>
+<li>Solar Cookers</li>
+<li>Landscape Irrigation Solar System</li>
+</ul>
+<a class="learn-more-link" href="https://tellco-europe.com/low-voltage-cable-solutions/" rel="noopener noreferrer" target="_blank">Learn more →</a>
+</div>
+</article>
+</div></div>
+</section>
+<section class="commercial-section final-cta-section">
+<div class="commercial-container final-cta">
+<div>
+<p class="commercial-eyebrow">Join the Program</p>
+<h2 class="half-size-title">Ready to represent TellCo Europe in your market?</h2>
+<p class="body-copy">Become part of the TellCoExperience XL commercial partner ecosystem and help bring clean-energy solutions to customers, communities, businesses, and institutions in your region.</p>
+<a class="cta-button" href="#">Apply as a Commercial Partner</a>
+</div>
+<div class="picture-placeholder picture-frame"><img alt="Join the program commercial photo" src="assets/commercial-join-current.jpg"/></div>
+</div>
+</section>
+</main>
+  <footer class="site-footer partner-page-footer">
+    <div class="container footer-main">
+      <div>
+        <h2>TellCo Europe</h2>
+        <ul class="contact-list">
+          <li><span aria-hidden="true">⌂</span>TellCo Europe Sagl<br>World Trade Center<br>Via Lugano 13<br>6982 Agno, Ticino<br>Switzerland</li>
+          <li><span aria-hidden="true">☎</span>00 41 91 610 25 28</li>
+          <li><span aria-hidden="true">◎</span>tellco-europe.com</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Solutions</h2>
+        <ul>
+          <li><a href="https://tellco-europe.com/tellcosol-models/">TellCoSOL Models</a></li>
+          <li><a href="https://tellco-europe.com/solar-led-lights/">TellCoLUX Lighting Solutions</a></li>
+          <li><a href="https://tellco-europe.com/solar-containers-consol/">Solar Container ConSOL</a></li>
+          <li><a href="https://tellco-europe.com/solar-water-pump/">Solar Water Pumps</a></li>
+          <li><a href="https://tellco-europe.com/consultancy-and-training/">Consulting and Training</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Partners</h2>
+        <ul>
+          <li><a href="commercial-partners.html">Commercial Partners</a></li>
+          <li><a href="service-partners.html">Service Partners</a></li>
+          <li><a href="influencers-partners.html">Influencer Partners</a></li>
+          <li><a href="affiliates-partners.html">Affiliate &amp; Referral Partners</a></li>
+          <li><a href="strategic-partners.html">Strategic Partners</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html#products">Solutions and Products</a></li>
+          <li><a href="index.html#partner-journey">Partner Journey</a></li>
+          <li><a href="contact.html">Join the Program</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>Copyright © 2024 | TellCo Europe Sagl | All Rights Reserved</span>
+        <div class="social-links" aria-label="Footer social links">
+        <a href="https://www.facebook.com/Tellcoeuropeoffical" aria-label="Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.2V5h-2.8C10.4 5 9 6.8 9 9.4V11H6.8v3.4H9V21h3.7v-6.6h2.8L16 11h-3.3V9.8c0-.9.4-1.3 1.3-1.3Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/tellcoeuropeofficial/" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.7 2.8h8.6c2.7 0 4.9 2.2 4.9 4.9v8.6c0 2.7-2.2 4.9-4.9 4.9H7.7a4.9 4.9 0 0 1-4.9-4.9V7.7c0-2.7 2.2-4.9 4.9-4.9Zm0 2A2.9 2.9 0 0 0 4.8 7.7v8.6a2.9 2.9 0 0 0 2.9 2.9h8.6a2.9 2.9 0 0 0 2.9-2.9V7.7a2.9 2.9 0 0 0-2.9-2.9H7.7Zm4.3 3.7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.1-3.1a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/tellco-europe-sagl-switzerland/" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.7h3.5V21H5V8.7Zm1.8-5.9a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1ZM10.8 8.7h3.3v1.7h.1c.5-.9 1.7-2 3.5-2 3.7 0 4.3 2.4 4.3 5.5V21h-3.5v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-3.5V8.7Z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCJPmVI-EG29OVMQisPmbQMA?view_as=subscriber" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.9-2.1c-.9-.9-1.9-.9-2.4-1C15 3.8 12 3.8 12 3.8h-.1s-3 0-6.3.3c-.5.1-1.5.1-2.4 1-.7.6-.9 2.1-.9 2.1S2 9 2 10.8v1.7c0 1.8.3 3.6.3 3.6s.2 1.5.9 2.1c.9.9 2.1.9 2.6 1 1.9.2 6.2.3 6.2.3s3 0 6.3-.3c.5-.1 1.5-.1 2.4-1 .7-.6.9-2.1.9-2.1s.3-1.8.3-3.6v-1.7c0-1.8-.3-3.6-.3-3.6ZM9.9 14.9V8.7l5.7 3.1-5.7 3.1Z"/></svg>
+        </a>
+        <a href="https://x.com/TellCo__Europe" aria-label="X" class="social-icon social-x">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 10.3 21.8 2h-1.8l-6.6 7.2L8.2 2H2l8 11.1L2 22h1.8l7-7.7 5.6 7.7H22l-7.8-11.7Zm-2.5 2.8-.8-1.1L4.5 3.4h2.8l5.1 6.9.8 1.1 6.8 9.2h-2.8l-5.5-7.5Z"/></svg>
+        </a>
+      </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

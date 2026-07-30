@@ -18,6 +18,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Georama:wdth,wght@100..150,100..900&amp;family=Inter:wght@400;500&amp;family=Montserrat:wght@600;700&amp;family=Poppins:wght@500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--industries-red:#e30613;--industries-ink:#292929;--industries-muted:#444;--industries-gray:#f4f4f4;--industries-line:#e3e3e3}
+    .industries-page{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--industries-ink)}
+    .industries-container{width:min(100% - 48px,1180px);margin-inline:auto}
+    .industries-hero{position:relative;height:630px;overflow:hidden;background:linear-gradient(130deg,#26384b,#7893a5)}
+.industries-hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.industries-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,16,31,.05),rgba(4,16,31,.20) 45%,rgba(4,16,31,.80))}
+.industries-hero-content{position:relative;display:flex;flex-direction:column;align-items:flex-end;padding-top:155px;color:#fff;text-align:right}
+    .industries-hero-title{max-width:720px;margin:0;font-family:"Georama","Roboto Condensed",Arial,sans-serif;font-size:54.4px;font-weight:500;line-height:.98;letter-spacing:.035em;text-transform:uppercase;font-variation-settings:"wdth" 145,"wght" 500}
+    .industries-hero-subtitle{margin:20px 0 0;font-family:"Georama","Roboto Condensed",Arial,sans-serif;font-size:20.4px;font-weight:400;line-height:1.35;letter-spacing:.01em;font-variation-settings:"wdth" 135,"wght" 400}
+    .industries-hero-actions{display:flex;flex-direction:column;align-items:stretch;width:clamp(240px,22vw,300px);max-width:100%;gap:25px;margin-top:72px}
+    .industries-hero-button{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:14px 32px;border:1px solid var(--industries-red);background:var(--industries-red);color:#fff;font-family:"Georama","Roboto Condensed",Arial,sans-serif;font-size:13.6px;font-weight:400;line-height:1;letter-spacing:.01em;font-variation-settings:"wdth" 135,"wght" 400;text-align:center;white-space:nowrap}
+    .industries-hero-button.secondary{border-color:#fff;background:transparent}
+    .industries-directory{padding:clamp(58px,7vw,92px) 0;background:var(--industries-gray)}
+    .industries-eyebrow{margin:0 0 10px;color:var(--industries-red);font-size:13.2px;font-weight:800;line-height:1.5;letter-spacing:.14em;text-transform:uppercase}
+    .industry-name{font-size:clamp(16px,1.25vw,18px);letter-spacing:.08em}
+    .industries-heading{max-width:760px;margin:0 0 24px;color:var(--industries-ink);font-size:clamp(23.76px,2.772vw,37.62px);font-weight:700;line-height:1.08}
+    .industries-intro{max-width:960px;margin:0 0 42px;color:var(--industries-muted);font-size:16px;line-height:1.7}
+    .industries-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .industries-card{display:flex;min-height:240px;flex-direction:column;border:1px solid var(--industries-line);border-top:5px solid var(--industries-red);background:#fff;padding:26px 24px;box-shadow:0 10px 24px rgba(0,0,0,.05);transition:transform .25s ease,box-shadow .25s ease}
+    .industries-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.09)}
+    .industries-card h3{margin:0 0 14px;color:#333;font-size:22px;font-weight:700;line-height:1.2}
+    .industries-card p{margin:0;color:var(--industries-muted);font-size:16px;line-height:1.7}
+    .industries-card-link{display:inline-block;width:fit-content;margin-top:auto;padding-top:20px;color:var(--industries-red);font-size:15px;font-weight:700;line-height:1.4}
+    .industry-detail{padding:clamp(58px,7vw,92px) 0;background:#fff}
+    .industry-detail.is-gray{background:var(--industries-gray)}
+    .industry-detail-intro{display:grid;grid-template-columns:minmax(0,1fr) 480px;gap:70px;align-items:center}
+    .industry-detail.is-reversed .industry-detail-copy-block{order:2}
+    .industry-detail.is-reversed .industry-detail-image{order:1}
+    .industry-detail-heading{margin:0 0 24px;color:var(--industries-ink);font-size:clamp(23.76px,2.772vw,37.62px);font-weight:700;line-height:1.08}
+    .industry-detail-copy{margin:0 0 16px;color:var(--industries-muted);font-size:16px;line-height:1.7}
+    .industry-detail-image{display:block;width:100%;height:100%;min-height:520px;max-height:600px;object-fit:cover}
+    .industry-detail-image.is-government,.industry-detail-image.is-defense{object-position:60% center}
+    .industry-solutions{margin-top:50px;border:1px solid var(--industries-line);border-top:5px solid var(--industries-red);background:#fff;padding:30px 28px;box-shadow:0 8px 22px rgba(0,0,0,.05)}
+    .industry-panel-title{margin:0 0 20px;color:#555;font-size:14px;font-weight:800;line-height:1.5;letter-spacing:.08em;text-transform:uppercase}
+    .industry-solution-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 36px;margin:0;padding:0;list-style:none}
+    .industry-solution-list li{position:relative;padding-left:26px;color:var(--industries-muted);font-size:16px;line-height:1.6}
+    .industry-solution-list li::before{content:"✓";position:absolute;left:0;color:var(--industries-red);font-weight:800}
+    .industry-resources{margin-top:24px;border:1px solid var(--industries-line);background:var(--industries-gray);padding:26px 28px}
+    .industry-resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .industry-resource-grid a{color:var(--industries-red);font-size:15px;font-weight:700;line-height:1.5}
+    .industries-footer-social .social-icon,.industries-footer-social .social-icon svg{color:#fff;fill:#fff}
+    @media(max-width:1199px){.industries-hero-title{font-size:38.4px;line-height:1;letter-spacing:.015em;font-variation-settings:"wdth" 128,"wght" 500}.industries-hero-subtitle{font-size:18.7px;letter-spacing:.008em}.industries-hero-button{font-size:12.75px;letter-spacing:.008em}}
+    @media(max-width:1000px){.industries-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:1000px){.industry-detail-intro{grid-template-columns:1fr 400px;gap:40px}}
+@media(max-width:809px){.industries-hero-title{font-size:21.6px;font-weight:600;line-height:1.04;letter-spacing:0;font-variation-settings:"wdth" 100,"wght" 600}.industries-hero-subtitle{margin-top:12px;font-size:14.45px;letter-spacing:.006em}.industries-hero-actions{width:240px;margin-top:28px;gap:22px}.industries-hero-button{padding:13px 26px;font-size:11.9px;letter-spacing:.006em;font-variation-settings:"wdth" 125,"wght" 400}}
+@media(max-width:700px){.industries-container{width:min(100% - 32px,1180px)}.industries-hero{height:620px}.industries-hero-image{object-position:center}.industries-hero-overlay{background:rgba(4,16,31,.66)}.industries-hero-content{align-items:center;padding-top:110px;text-align:center}.industries-grid,.industry-detail-intro,.industry-solution-list,.industry-resource-grid{grid-template-columns:1fr}.industry-detail.is-reversed .industry-detail-copy-block{order:1}.industry-detail.is-reversed .industry-detail-image{order:2}.industry-detail-image{height:280px;min-height:0;max-height:none}}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -25,23 +73,22 @@
   <div class="topbar" aria-label="TellCo utility links">
     <div class="container topbar-inner">
       <div class="social-links" aria-label="Social links">
-        <a href="#" aria-label="Facebook" class="social-icon">
+        <a href="https://www.facebook.com/Tellcoeuropeoffical" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on Facebook" class="social-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.2V5h-2.8C10.4 5 9 6.8 9 9.4V11H6.8v3.4H9V21h3.7v-6.6h2.8L16 11h-3.3V9.8c0-.9.4-1.3 1.3-1.3Z"/></svg>
         </a>
-        <a href="#" aria-label="Instagram" class="social-icon">
+        <a href="https://www.instagram.com/tellcoeuropeofficial/" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on Instagram" class="social-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.7 2.8h8.6c2.7 0 4.9 2.2 4.9 4.9v8.6c0 2.7-2.2 4.9-4.9 4.9H7.7a4.9 4.9 0 0 1-4.9-4.9V7.7c0-2.7 2.2-4.9 4.9-4.9Zm0 2A2.9 2.9 0 0 0 4.8 7.7v8.6a2.9 2.9 0 0 0 2.9 2.9h8.6a2.9 2.9 0 0 0 2.9-2.9V7.7a2.9 2.9 0 0 0-2.9-2.9H7.7Zm4.3 3.7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.1-3.1a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z"/></svg>
         </a>
-        <a href="#" aria-label="LinkedIn" class="social-icon">
+        <a href="https://www.linkedin.com/company/tellco-europe-sagl-switzerland/" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on LinkedIn" class="social-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.7h3.5V21H5V8.7Zm1.8-5.9a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1ZM10.8 8.7h3.3v1.7h.1c.5-.9 1.7-2 3.5-2 3.7 0 4.3 2.4 4.3 5.5V21h-3.5v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-3.5V8.7Z"/></svg>
         </a>
-        <a href="#" aria-label="YouTube" class="social-icon">
+        <a href="https://www.youtube.com/channel/UCJPmVI-EG29OVMQisPmbQMA?view_as=subscriber" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on YouTube" class="social-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.9-2.1c-.9-.9-1.9-.9-2.4-1C15 3.8 12 3.8 12 3.8h-.1s-3 0-6.3.3c-.5.1-1.5.1-2.4 1-.7.6-.9 2.1-.9 2.1S2 9 2 10.8v1.7c0 1.8.3 3.6.3 3.6s.2 1.5.9 2.1c.9.9 2.1.9 2.6 1 1.9.2 6.2.3 6.2.3s3 0 6.3-.3c.5-.1 1.5-.1 2.4-1 .7-.6.9-2.1.9-2.1s.3-1.8.3-3.6v-1.7c0-1.8-.3-3.6-.3-3.6ZM9.9 14.9V8.7l5.7 3.1-5.7 3.1Z"/></svg>
         </a>
-        <a href="#" aria-label="X" class="social-icon social-x">
+        <a href="https://x.com/TellCo__Europe" target="_blank" rel="noopener noreferrer" aria-label="TellCo Europe on X" class="social-icon social-x">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 10.3 21.8 2h-1.8l-6.6 7.2L8.2 2H2l8 11.1L2 22h1.8l7-7.7 5.6 7.7H22l-7.8-11.7Zm-2.5 2.8-.8-1.1L4.5 3.4h2.8l5.1 6.9.8 1.1 6.8 9.2h-2.8l-5.5-7.5Z"/></svg>
         </a>
       </div>
-      <a class="reseller-link partner-login" href="#">Partner Login</a>
     </div>
   </div>
 
@@ -60,30 +107,357 @@
 
       <nav class="primary-nav" id="primary-navigation" data-nav aria-label="Primary navigation">
         <a href="index.html">TellCoExperience XL</a>
-        <a href="index.html#partner-tracks">Partners</a>
-        <a href="industries.html">Industries</a>
-        <a href="index.html#registration">Contact</a>
+        <a href="commercial-partners.html">Commercial Partners</a>
+        <a href="service-partners.html">Service Partners</a>
+        <a href="influencers-partners.html">Influencers</a>
+        <a href="affiliates-partners.html">Affiliates</a>
+        <a href="strategic-partners.html">Strategic Partners</a>
+        <a href="industries.html" aria-current="page">Industries</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="homepage-v2">
-    <section class="hp-solutions" aria-label="Industries We Serve">
-      <div class="hp-industry-band" id="industries">
-        <div class="container hp-solutions-group">
-          <header class="hp-section-heading">
-            <p class="hp-kicker">Solutions by Sector</p>
-            <h2 class="hp-balanced-heading">INDUSTRIES WE SERVE</h2>
-          </header>
-          <div class="hp-directory-grid hp-industry-grid">
-            <article class="hp-directory-card hp-industry-card"><div class="hp-industry-content"><h3>Healthcare &amp; Education</h3><p>Reliable solar, cooling, lighting, and off-grid infrastructure for clinics, hospitals, schools, and training centers that need dependable power and resilient operations.</p><a class="hp-industry-link" href="#solar-cooling-systems">View Solutions &rarr;</a></div></article>
-            <article class="hp-directory-card hp-industry-card"><div class="hp-industry-content"><h3>Commercial &amp; Industrial</h3><p>Scalable solar and energy-efficiency solutions that help businesses reduce operating costs, improve performance, and support more sustainable operations.</p><a class="hp-industry-link" href="#led-lighting-solutions">View Solutions &rarr;</a></div></article>
-            <article class="hp-directory-card hp-industry-card"><div class="hp-industry-content"><h3>Water &amp; Agriculture</h3><p>Solar-powered water, irrigation, cooling, and off-grid systems that help reduce diesel dependency and improve productivity in remote and agricultural environments.</p><a class="hp-industry-link" href="#solar-water-pumping-systems">View Solutions &rarr;</a></div></article>
-            <article class="hp-directory-card hp-industry-card"><div class="hp-industry-content"><h3>Hospitality &amp; Real Estate</h3><p>Efficient lighting, solar, cooling, and infrastructure solutions for hotels, residential developments, commercial buildings, and real estate portfolios.</p><a class="hp-industry-link" href="#led-lighting-solutions">View Solutions &rarr;</a></div></article>
-            <article class="hp-directory-card hp-industry-card"><div class="hp-industry-content"><h3>Sports &amp; Recreation</h3><p>Efficient lighting and infrastructure solutions for stadiums, sports fields, parks, recreation areas, and public facilities that require visibility, safety, and lower energy use.</p><a class="hp-industry-link" href="#led-lighting-solutions">View Solutions &rarr;</a></div></article>
-            <article class="hp-directory-card hp-industry-card"><div class="hp-industry-content"><h3>Government &amp; Urban Infrastructure</h3><p>Sustainable infrastructure solutions for municipalities, public institutions, street lighting, smart city programs, and community energy access initiatives.</p><a class="hp-industry-link" href="#solar-water-pumping-systems">View Solutions &rarr;</a></div></article>
-            <article class="hp-directory-card hp-industry-card"><div class="hp-industry-content"><h3>Defense &amp; Humanitarian</h3><p>Rapid-deployment solar, off-grid, cooling, water, and containerized solutions for mission-critical, remote, emergency, and humanitarian environments.</p><a class="hp-industry-link" href="#consol-off-grid-containers">View Solutions &rarr;</a></div></article>
-            <article class="hp-directory-card hp-industry-card"><div class="hp-industry-content"><h3>Mining &amp; Manufacturing</h3><p>Robust solar, storage, lighting, and energy-efficiency solutions for remote sites, industrial facilities, and high-demand operations seeking reliable and lower-cost power.</p><a class="hp-industry-link" href="#consol-off-grid-containers">View Solutions &rarr;</a></div></article>
+  <main id="main" class="industries-page">
+    <section class="industries-hero" aria-labelledby="industries-hero-title">
+      <img class="industries-hero-image" src="assets/industries-hero.png" alt="Engineers overseeing clean-energy infrastructure serving multiple industries">
+      <div class="industries-hero-overlay" aria-hidden="true"></div>
+      <div class="industries-container industries-hero-content">
+        <h1 class="industries-hero-title" id="industries-hero-title">Industries<br>We Serve</h1>
+        <p class="industries-hero-subtitle">Solutions for Every Industry</p>
+        <div class="industries-hero-actions">
+          <a class="industries-hero-button" href="#industries">Explore Industries</a>
+          <a class="industries-hero-button secondary" href="https://www.tellco-europe.com/" target="_blank" rel="noopener noreferrer">View Our Solutions</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries-directory" id="industries" aria-labelledby="industries-directory-title">
+      <div class="industries-container">
+        <header>
+          <h2 class="industries-heading" id="industries-directory-title">Industries We Serve</h2>
+          <p class="industries-intro">TellCo Europe provides integrated solar, off-grid power, energy storage, lighting, cooling, water, engineering, and project-development solutions for organizations operating across public, commercial, industrial, and mission-critical environments. Projects can be supported from feasibility and system design through financing structures, procurement, deployment, monitoring, training, and long-term maintenance.</p>
+        </header>
+        <div class="industries-grid">
+          <article class="industries-card"><h3>Healthcare &amp; Education</h3><p>Reliable solar, cooling, lighting, and off-grid infrastructure for clinics, hospitals, schools, and training centers that need dependable power and resilient operations.</p><a class="industries-card-link" href="#healthcare-education">Learn more →</a></article>
+          <article class="industries-card"><h3>Commercial &amp; Industrial</h3><p>Scalable solar and energy-efficiency solutions that help businesses reduce operating costs, improve performance, and support more sustainable operations.</p><a class="industries-card-link" href="#commercial-industrial">Learn more →</a></article>
+          <article class="industries-card"><h3>Water &amp; Agriculture</h3><p>Solar-powered water, irrigation, cooling, and off-grid systems that help reduce diesel dependency and improve productivity in remote and agricultural environments.</p><a class="industries-card-link" href="#water-agriculture">Learn more →</a></article>
+          <article class="industries-card"><h3>Hospitality &amp; Real Estate</h3><p>Efficient lighting, solar, cooling, and infrastructure solutions for hotels, residential developments, commercial buildings, and real estate portfolios.</p><a class="industries-card-link" href="#hospitality-real-estate">Learn more →</a></article>
+          <article class="industries-card"><h3>Sports &amp; Recreation</h3><p>Efficient lighting and infrastructure solutions for stadiums, sports fields, parks, recreation areas, and public facilities that require visibility, safety, and lower energy use.</p><a class="industries-card-link" href="#sports-recreation">Learn more →</a></article>
+          <article class="industries-card"><h3>Government &amp; Urban Infrastructure</h3><p>Sustainable infrastructure solutions for municipalities, public institutions, street lighting, smart city programs, and community energy access initiatives.</p><a class="industries-card-link" href="#government-urban-infrastructure">Learn more →</a></article>
+          <article class="industries-card"><h3>Defense &amp; Humanitarian</h3><p>Rapid-deployment solar, off-grid, cooling, water, and containerized solutions for mission-critical, remote, emergency, and humanitarian environments.</p><a class="industries-card-link" href="#defense-humanitarian">Learn more →</a></article>
+          <article class="industries-card"><h3>Mining &amp; Manufacturing</h3><p>Robust solar, storage, lighting, and energy-efficiency solutions for remote sites, industrial facilities, and high-demand operations seeking reliable and lower-cost power.</p><a class="industries-card-link" href="#mining-manufacturing">Learn more →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-detail" id="healthcare-education" aria-labelledby="healthcare-education-title">
+      <div class="industries-container">
+        <div class="industry-detail-intro">
+          <div class="industry-detail-copy-block">
+            <p class="industries-eyebrow industry-name">Healthcare &amp; Education</p>
+            <h2 class="industry-detail-heading" id="healthcare-education-title">Reliable energy for essential services and learning environments</h2>
+            <p class="industry-detail-copy">TellCo Europe supports hospitals, clinics, schools, colleges, universities, and training centers that require dependable electricity, efficient lighting, cooling, clean water, and resilient off-grid infrastructure. Solutions can be designed to keep medical equipment, communications, lighting, refrigeration, water systems, classrooms, laboratories, and administrative facilities operating where grid power is unreliable or unavailable.</p>
+            <p class="industry-detail-copy">TellCo Europe’s EAASI Africa initiative combines solar power and water kiosks for healthcare facilities, while its Indonesia initiative proposes tailored solar PV systems for schools, colleges, and universities. The CampSOL concept can also support clinic equipment, climate control, connectivity, lighting, refrigeration, and temporary training or healthcare facilities.</p>
+          </div>
+          <img class="industry-detail-image" src="assets/healthcare-education.png" alt="Solar-powered healthcare and education facilities">
+        </div>
+
+        <div class="industry-solutions">
+          <h3 class="industry-panel-title">Relevant Solutions</h3>
+          <ul class="industry-solution-list">
+            <li>Solar PV systems for hospitals, clinics, schools, and campuses</li>
+            <li>Battery storage and backup power</li>
+            <li>ELSOL electrical off-grid systems</li>
+            <li>ConSOL and CampSOL containerized infrastructure</li>
+            <li>Solar-powered water systems and water kiosks</li>
+            <li>Indoor and outdoor LED lighting</li>
+            <li>Solar cooling and refrigeration</li>
+            <li>Solar street and public-safety lighting around campuses</li>
+            <li>Energy audits, feasibility studies, and system design</li>
+            <li>Training and local technical-capacity development</li>
+          </ul>
+        </div>
+
+        <div class="industry-resources">
+          <h3 class="industry-panel-title">Related Programs and Resources</h3>
+          <div class="industry-resource-grid">
+            <a href="https://tellco-europe.org/eaasi-cambodia/" target="_blank" rel="noopener noreferrer">EAASI healthcare and education programs&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/indonesia/" target="_blank" rel="noopener noreferrer">Indonesia education solar programs&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/solar-containers-camps/" target="_blank" rel="noopener noreferrer">Smart solar camps and communities&nbsp;&#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-detail is-gray is-reversed" id="commercial-industrial" aria-labelledby="commercial-industrial-title">
+      <div class="industries-container">
+        <div class="industry-detail-intro">
+          <div class="industry-detail-copy-block">
+            <p class="industries-eyebrow industry-name">Commercial &amp; Industrial</p>
+            <h2 class="industry-detail-heading" id="commercial-industrial-title">Integrated energy solutions for productive and cost-efficient operations</h2>
+            <p class="industry-detail-copy">TellCo Europe supports commercial and industrial organizations seeking to reduce energy costs, strengthen operational continuity, modernize facilities, and improve environmental performance. Solutions can combine solar generation, battery storage, efficient indoor and outdoor lighting, backup power, smart monitoring, engineering services, and energy-efficiency upgrades.</p>
+            <p class="industry-detail-copy">TellCo Europe serves a wide range of commercial and industrial clients, including manufacturers, warehouses, logistics companies, utilities, construction firms, and energy-intensive facilities. Support can cover the full project lifecycle, from feasibility studies and technical design to procurement, installation, monitoring, maintenance, and financing structures for qualified projects.</p>
+          </div>
+          <img class="industry-detail-image" src="assets/commercial-industrial.png" alt="Solar-powered commercial and industrial facility">
+        </div>
+        <div class="industry-solutions">
+          <h3 class="industry-panel-title">Relevant Solutions</h3>
+          <ul class="industry-solution-list">
+            <li>Commercial and industrial solar PV</li>
+            <li>Battery-storage and hybrid-energy systems</li>
+            <li>ELSOL and Lausanne off-grid or backup-power systems</li>
+            <li>LED high-bay lighting for factories and warehouses</li>
+            <li>Indoor LED lighting and commercial retrofits</li>
+            <li>LED floodlights and exterior security lighting</li>
+            <li>Smart metering and remote system monitoring</li>
+            <li>Low-voltage cable solutions</li>
+            <li>Energy audits and feasibility studies</li>
+            <li>Lighting as a Service and Energy as a Service structures</li>
+            <li>Operations and maintenance support</li>
+          </ul>
+        </div>
+        <div class="industry-resources">
+          <h3 class="industry-panel-title">Related Programs and Resources</h3>
+          <div class="industry-resource-grid">
+            <a href="https://tellco-europe.com/" target="_blank" rel="noopener noreferrer">TellCo Europe solutions and technology&nbsp;&#8599;</a>
+            <a href="https://www.tellco-europe.shop/products/lausanne-solar-generator" target="_blank" rel="noopener noreferrer">Lausanne solar generator and storage system&nbsp;&#8599;</a>
+            <a href="https://www.tellco-europe.shop/collections/tellco-europes-premium-products" target="_blank" rel="noopener noreferrer">TellCo Europe premium solar and storage systems&nbsp;&#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-detail" id="water-agriculture" aria-labelledby="water-agriculture-title">
+      <div class="industries-container">
+        <div class="industry-detail-intro">
+          <div class="industry-detail-copy-block">
+            <p class="industries-eyebrow industry-name">Water &amp; Agriculture</p>
+            <h2 class="industry-detail-heading" id="water-agriculture-title">Solar-powered infrastructure for water, irrigation, cooling, and food systems</h2>
+            <p class="industry-detail-copy">TellCo Europe serves farms, agricultural businesses, rural communities, water organizations, and agrifood operators with renewable-energy systems designed to support water access, irrigation, cooling, storage, and remote operations. These solutions can reduce dependence on diesel-powered pumping and refrigeration while improving productivity and resilience in areas with weak or unavailable grid infrastructure.</p>
+            <p class="industry-detail-copy">The TellCo Europe portfolio includes solar-powered water pumps, solar water heaters, solar-powered cold-storage containers, solar cooling, off-grid power, and lighting for agricultural and rural environments. The Africa Solar Agrifood Processing initiative also aims to combine renewable energy and infrastructure to improve agricultural production, processing, storage, and distribution.</p>
+          </div>
+          <img class="industry-detail-image" src="assets/water-agriculture.png" alt="Solar-powered agricultural irrigation and water system">
+        </div>
+        <div class="industry-solutions">
+          <h3 class="industry-panel-title">Relevant Solutions</h3>
+          <ul class="industry-solution-list">
+            <li>Solar-powered water pumps</li>
+            <li>Irrigation systems</li>
+            <li>Solar water heating</li>
+            <li>Solar-powered cold-storage containers</li>
+            <li>Solar cooling and refrigeration</li>
+            <li>Solar PV and battery storage for farms</li>
+            <li>Off-grid ELSOL systems</li>
+            <li>ConSOL containerized power</li>
+            <li>Solar lighting for farms and rural facilities</li>
+            <li>Water kiosks and clean-water infrastructure</li>
+            <li>Energy for agrifood processing and distribution</li>
+            <li>Feasibility studies and agricultural energy assessments</li>
+          </ul>
+        </div>
+        <div class="industry-resources">
+          <h3 class="industry-panel-title">Related Programs and Resources</h3>
+          <div class="industry-resource-grid">
+            <a href="https://tellco-europe.com/solar-water-pump/" target="_blank" rel="noopener noreferrer">Solar-powered water pumps&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/solar-water-heaters/" target="_blank" rel="noopener noreferrer">Solar water heaters&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.org/programs/" target="_blank" rel="noopener noreferrer">TellCo Europe global programs&nbsp;&#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-detail is-gray is-reversed" id="hospitality-real-estate" aria-labelledby="hospitality-real-estate-title">
+      <div class="industries-container">
+        <div class="industry-detail-intro">
+          <div class="industry-detail-copy-block">
+            <p class="industries-eyebrow industry-name">Hospitality &amp; Real Estate</p>
+            <h2 class="industry-detail-heading" id="hospitality-real-estate-title">Efficient, reliable energy for buildings, hotels, resorts, and developments</h2>
+            <p class="industry-detail-copy">TellCo Europe supports hotels, resorts, residential developments, commercial buildings, property companies, villas, compounds, and real estate portfolios with solar, lighting, cooling, water, and energy-management solutions. Projects can be designed to reduce utility costs, improve guest and occupant comfort, enhance outdoor safety, and strengthen backup power for essential building systems.</p>
+            <p class="industry-detail-copy">Applications include rooftop or ground-mounted solar systems, battery storage, indoor LED retrofits, architectural and landscape lighting, solar park and pathway lights, solar water heating, cooling, backup power, smart-building controls, and EV charging. TellCo Europe’s Smart City materials also include smart homes and buildings as part of a broader energy-efficiency and utility-management approach.</p>
+          </div>
+          <img class="industry-detail-image" src="assets/hospitality-real-estate.png" alt="Solar-powered hospitality and residential development">
+        </div>
+        <div class="industry-solutions">
+          <h3 class="industry-panel-title">Relevant Solutions</h3>
+          <ul class="industry-solution-list">
+            <li>Solar PV and battery storage</li>
+            <li>Backup power for hotels and buildings</li>
+            <li>Indoor LED lighting and retrofit programs</li>
+            <li>Landscape, pathway, garden, and façade lighting</li>
+            <li>Solar street and parking-area lighting</li>
+            <li>Solar water heating</li>
+            <li>Solar cooling and climate-control systems</li>
+            <li>Smart-building and energy-management solutions</li>
+            <li>EV charging integration</li>
+            <li>Lighting simulations and energy audits</li>
+            <li>Lighting as a Service and Energy as a Service</li>
+          </ul>
+        </div>
+        <div class="industry-resources">
+          <h3 class="industry-panel-title">Related Programs and Resources</h3>
+          <div class="industry-resource-grid">
+            <a href="https://tellco-europe.com/solar-smart-city-solutions/" target="_blank" rel="noopener noreferrer">Smart City and smart-building solutions&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/solar-water-heaters/" target="_blank" rel="noopener noreferrer">Solar water heaters&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/" target="_blank" rel="noopener noreferrer">TellCo Europe lighting and solar solutions&nbsp;&#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-detail" id="sports-recreation" aria-labelledby="sports-recreation-title">
+      <div class="industries-container">
+        <div class="industry-detail-intro">
+          <div class="industry-detail-copy-block">
+            <p class="industries-eyebrow industry-name">Sports &amp; Recreation</p>
+            <h2 class="industry-detail-heading" id="sports-recreation-title">High-performance lighting and energy infrastructure for public and private venues</h2>
+            <p class="industry-detail-copy">TellCo Europe provides lighting and supporting energy infrastructure for stadiums, football and soccer fields, tennis courts, sports parks, arenas, recreation areas, gyms, public parks, and other facilities that require reliable illumination, visibility, safety, and efficient operation.</p>
+            <p class="industry-detail-copy">The Brione LED stadium-lighting range is designed for outdoor sports applications and can be configured with different beam angles and high-mast arrangements. TellCo Europe also offers LED floodlights, landscape and park lighting, solar pathway lighting, off-grid power, and energy-efficient indoor lighting for training areas, gymnasiums, exhibition spaces, and supporting facilities.</p>
+          </div>
+          <img class="industry-detail-image" src="assets/sports-recreation.png" alt="Energy-efficient lighting at a sports stadium">
+        </div>
+        <div class="industry-solutions">
+          <h3 class="industry-panel-title">Relevant Solutions</h3>
+          <ul class="industry-solution-list">
+            <li>LED stadium floodlights</li>
+            <li>High-mast lighting systems</li>
+            <li>Lighting for football, soccer, and tennis facilities</li>
+            <li>LED floodlights for arenas and recreation areas</li>
+            <li>Solar park and pathway lighting</li>
+            <li>Landscape and public-space lighting</li>
+            <li>Indoor lighting for gyms and training facilities</li>
+            <li>Solar PV and battery storage</li>
+            <li>Backup and off-grid power</li>
+            <li>Lighting distribution simulations</li>
+            <li>Energy audits and retrofit planning</li>
+          </ul>
+        </div>
+        <div class="industry-resources">
+          <h3 class="industry-panel-title">Related Programs and Resources</h3>
+          <div class="industry-resource-grid">
+            <a href="https://tellco-europe.com/led-stadium-lights/" target="_blank" rel="noopener noreferrer">LED stadium lights&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/outdoor-led-lights/" target="_blank" rel="noopener noreferrer">Outdoor LED lighting solutions&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/" target="_blank" rel="noopener noreferrer">TellCo Europe solar and lighting solutions&nbsp;&#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-detail is-gray is-reversed" id="government-urban-infrastructure" aria-labelledby="government-urban-infrastructure-title">
+      <div class="industries-container">
+        <div class="industry-detail-intro">
+          <div class="industry-detail-copy-block">
+            <p class="industries-eyebrow industry-name">Government &amp; Urban Infrastructure</p>
+            <h2 class="industry-detail-heading" id="government-urban-infrastructure-title">Sustainable infrastructure for municipalities, public institutions, and communities</h2>
+            <p class="industry-detail-copy">TellCo Europe works with governments, municipalities, ministries, public institutions, utilities, and local authorities on renewable-energy, street-lighting, smart-city, public-safety, and community-infrastructure programs. Support can include project assessment, feasibility, engineering, financing structures, procurement, deployment, remote monitoring, training, maintenance, and large-scale rollout planning.</p>
+            <p class="industry-detail-copy">Urban applications include solar and LED street lighting, roadway retrofits, remote lighting controls, smart grids, traffic and parking systems, public-space lighting, energy-efficient public buildings, rural electrification, and renewable power for schools, clinics, and government facilities. TellCo Europe’s global programs also include municipal street-lighting initiatives and the proposed Kochi canal-resilience project.</p>
+          </div>
+          <img class="industry-detail-image is-government" src="assets/government-urban-infrastructure.png" alt="Solar street lighting in modern urban infrastructure">
+        </div>
+        <div class="industry-solutions">
+          <h3 class="industry-panel-title">Relevant Solutions</h3>
+          <ul class="industry-solution-list">
+            <li>Solar and LED street lighting</li>
+            <li>Urban and roadway LED retrofit programs</li>
+            <li>Remote lighting-control and management systems</li>
+            <li>Smart grids and smart-city infrastructure</li>
+            <li>Traffic and smart-parking systems</li>
+            <li>Public-safety lighting</li>
+            <li>Solar PV and storage for public buildings</li>
+            <li>Rural and community electrification</li>
+            <li>Energy audits and municipal feasibility studies</li>
+            <li>Water and climate-resilience infrastructure</li>
+            <li>Lighting as a Service and zero-upfront-capital structures</li>
+            <li>Training and local workforce development</li>
+          </ul>
+        </div>
+        <div class="industry-resources">
+          <h3 class="industry-panel-title">Related Programs and Resources</h3>
+          <div class="industry-resource-grid">
+            <a href="https://tellco-europe.com/solar-smart-city-solutions/" target="_blank" rel="noopener noreferrer">Smart City solutions&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.org/business/" target="_blank" rel="noopener noreferrer">Project development and financing model&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/videos-and-industry-resources/" target="_blank" rel="noopener noreferrer">Videos and municipal project resources&nbsp;&#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-detail" id="defense-humanitarian" aria-labelledby="defense-humanitarian-title">
+      <div class="industries-container">
+        <div class="industry-detail-intro">
+          <div class="industry-detail-copy-block">
+            <p class="industries-eyebrow industry-name">Defense &amp; Humanitarian</p>
+            <h2 class="industry-detail-heading" id="defense-humanitarian-title">Rapidly deployable infrastructure for critical and remote environments</h2>
+            <p class="industry-detail-copy">TellCo Europe provides modular solar, storage, lighting, cooling, water, connectivity, and containerized infrastructure for defense, emergency-response, humanitarian, disaster-relief, and remote operational environments. Systems can be configured to support temporary bases, field clinics, training facilities, accommodation, communications, refrigeration, lighting, security, and essential equipment where conventional infrastructure is unavailable or unreliable.</p>
+            <p class="industry-detail-copy">The CampSOL concept includes 20-foot and 40-foot configurable container systems with power generation, energy storage, climate control, remote monitoring, communications, CCTV, water systems, EV charging, and hybrid generator integration. TellCo Europe also identifies emergency power, temporary power, police, army, government, nonprofit, United Nations, and Red Cross organizations among potential users of its off-grid solutions.</p>
+          </div>
+          <img class="industry-detail-image is-defense" src="assets/defense-humanitarian.png" alt="Deployable solar infrastructure for humanitarian operations">
+        </div>
+        <div class="industry-solutions">
+          <h3 class="industry-panel-title">Relevant Solutions</h3>
+          <ul class="industry-solution-list">
+            <li>ConSOL containerized solar systems</li>
+            <li>CampSOL modular camps and communities</li>
+            <li>ELSOL emergency and off-grid power</li>
+            <li>Solar generators and battery-storage stations</li>
+            <li>Hybrid solar and generator systems</li>
+            <li>Mobile power for field hospitals and command facilities</li>
+            <li>Solar cooling and medical refrigeration</li>
+            <li>Water pumping and clean-water systems</li>
+            <li>Communications, VSAT, internet, and device charging</li>
+            <li>CCTV and security systems</li>
+            <li>Remote monitoring and battery management</li>
+            <li>Solar LED public-safety and perimeter lighting</li>
+            <li>Temporary accommodation and training facilities</li>
+          </ul>
+        </div>
+        <div class="industry-resources">
+          <h3 class="industry-panel-title">Related Programs and Resources</h3>
+          <div class="industry-resource-grid">
+            <a href="https://tellcosol.com/" target="_blank" rel="noopener noreferrer">ConSOL Smart Solar Camps&nbsp;&#8599;</a>
+            <a href="https://tellcosol.com/lausanne-solar-battery-storage-station/" target="_blank" rel="noopener noreferrer">Lausanne Solar Battery Storage&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/solar-containers-camps/" target="_blank" rel="noopener noreferrer">Smart solar camps and communities&nbsp;&#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industry-detail is-gray is-reversed" id="mining-manufacturing" aria-labelledby="mining-manufacturing-title">
+      <div class="industries-container">
+        <div class="industry-detail-intro">
+          <div class="industry-detail-copy-block">
+            <p class="industries-eyebrow industry-name">Mining &amp; Manufacturing</p>
+            <h2 class="industry-detail-heading" id="mining-manufacturing-title">Resilient energy for remote sites and demanding industrial operations</h2>
+            <p class="industry-detail-copy">TellCo Europe supports mining companies, manufacturers, industrial facilities, warehouses, processing operations, and remote worksites that need reliable energy, efficient lighting, storage, monitoring, and reduced dependence on diesel generation. Systems can be scaled from backup power for essential operations to integrated solar, storage, lighting, cooling, water, and remote-site infrastructure.</p>
+            <p class="industry-detail-copy">TellCo Europe’s planned Chile initiative is intended to provide clean power to remote mining operations and nearby communities, with possible expansion into Peru, Bolivia, and Brazil under analysis. Relevant products include industrial high-bay lighting, floodlights, explosion-proof lighting, solar generators, battery storage, ConSOL systems, water pumping, low-voltage cables, and hybrid off-grid power.</p>
+          </div>
+          <img class="industry-detail-image" src="assets/mining-manufacturing.png" alt="Solar power and energy storage supporting mining operations">
+        </div>
+        <div class="industry-solutions">
+          <h3 class="industry-panel-title">Relevant Solutions</h3>
+          <ul class="industry-solution-list">
+            <li>Solar PV for industrial and remote sites</li>
+            <li>Battery storage and backup power</li>
+            <li>Hybrid solar-generator systems</li>
+            <li>ConSOL containerized energy systems</li>
+            <li>ELSOL off-grid power</li>
+            <li>Industrial LED high-bay lighting</li>
+            <li>LED floodlights and site lighting</li>
+            <li>Explosion-proof lighting</li>
+            <li>Low-voltage industrial cables</li>
+            <li>Solar water pumping</li>
+            <li>Cooling and refrigeration</li>
+            <li>Smart monitoring and asset management</li>
+            <li>Energy audits and efficiency retrofits</li>
+            <li>Operations and maintenance planning</li>
+          </ul>
+        </div>
+        <div class="industry-resources">
+          <h3 class="industry-panel-title">Related Programs and Resources</h3>
+          <div class="industry-resource-grid">
+            <a href="https://tellco-europe.org/programs/" target="_blank" rel="noopener noreferrer">TellCo Europe global programs and mining initiative&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.com/" target="_blank" rel="noopener noreferrer">TellCo Europe solutions and technologies&nbsp;&#8599;</a>
+            <a href="https://tellco-europe.org/business/" target="_blank" rel="noopener noreferrer">Project-development model&nbsp;&#8599;</a>
           </div>
         </div>
       </div>
@@ -101,23 +475,23 @@
       </div>
 
       <div>
-        <h2>Solutions and Technology</h2>
+        <h2>Solutions</h2>
         <ul>
-          <li>Solar Container ConSOL</li>
-          <li>TellCoSOL Models</li>
-          <li>TellCoLUX</li>
-          <li>Solar Water Pumps</li>
-          <li>Consulting</li>
+          <li><a href="https://tellco-europe.com/tellcosol-models/">TellCoSOL Models</a></li>
+          <li><a href="https://tellco-europe.com/solar-led-lights/">TellCoLUX Lighting Solutions</a></li>
+          <li><a href="https://tellco-europe.com/solar-containers-consol/">Solar Container ConSOL</a></li>
+          <li><a href="https://tellco-europe.com/solar-water-pump/">Solar Water Pumps</a></li>
+          <li><a href="https://tellco-europe.com/consultancy-and-training/">Consulting and Training</a></li>
         </ul>
       </div>
 
       <div>
         <h2>Partners</h2>
         <ul>
-          <li><a href="traditional-partners.html">Traditional Partners</a></li>
-          <li><a href="affiliate-partners.html">Affiliate &amp; Referral Partners</a></li>
-          <li><a href="influencers.html">Influencer Partners</a></li>
+          <li><a href="commercial-partners.html">Commercial Partners</a></li>
           <li><a href="service-partners.html">Service Partners</a></li>
+          <li><a href="influencers-partners.html">Influencer Partners</a></li>
+          <li><a href="affiliates-partners.html">Affiliate &amp; Referral Partners</a></li>
           <li><a href="strategic-partners.html">Strategic Partners</a></li>
         </ul>
       </div>
@@ -125,29 +499,29 @@
       <div>
         <h2>Quick Links</h2>
         <ul>
-          <li><a href="#platform-pillars">Benefits</a></li>
-          <li><a href="#partner-journey">Partner Journey</a></li>
-          <li><a href="#registration">Join the Program</a></li>
+          <li><a href="index.html#products">Solutions and Products</a></li>
+          <li><a href="index.html#partner-journey">Partner Journey</a></li>
+          <li><a href="contact.html">Join the Program</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
         <span>Copyright © 2024 | TellCo Europe Sagl | All Rights Reserved</span>
-        <div class="social-links" aria-label="Footer social links">
-        <a href="#" aria-label="Facebook" class="social-icon">
+        <div class="social-links industries-footer-social" aria-label="Footer social links">
+        <a href="https://www.facebook.com/Tellcoeuropeoffical" aria-label="Facebook" class="social-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.2V5h-2.8C10.4 5 9 6.8 9 9.4V11H6.8v3.4H9V21h3.7v-6.6h2.8L16 11h-3.3V9.8c0-.9.4-1.3 1.3-1.3Z"/></svg>
         </a>
-        <a href="#" aria-label="Instagram" class="social-icon">
+        <a href="https://www.instagram.com/tellcoeuropeofficial/" aria-label="Instagram" class="social-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.7 2.8h8.6c2.7 0 4.9 2.2 4.9 4.9v8.6c0 2.7-2.2 4.9-4.9 4.9H7.7a4.9 4.9 0 0 1-4.9-4.9V7.7c0-2.7 2.2-4.9 4.9-4.9Zm0 2A2.9 2.9 0 0 0 4.8 7.7v8.6a2.9 2.9 0 0 0 2.9 2.9h8.6a2.9 2.9 0 0 0 2.9-2.9V7.7a2.9 2.9 0 0 0-2.9-2.9H7.7Zm4.3 3.7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.1-3.1a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z"/></svg>
         </a>
-        <a href="#" aria-label="LinkedIn" class="social-icon">
+        <a href="https://www.linkedin.com/company/tellco-europe-sagl-switzerland/" aria-label="LinkedIn" class="social-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.7h3.5V21H5V8.7Zm1.8-5.9a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1ZM10.8 8.7h3.3v1.7h.1c.5-.9 1.7-2 3.5-2 3.7 0 4.3 2.4 4.3 5.5V21h-3.5v-6.3c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-3.5V8.7Z"/></svg>
         </a>
-        <a href="#" aria-label="YouTube" class="social-icon">
+        <a href="https://www.youtube.com/channel/UCJPmVI-EG29OVMQisPmbQMA?view_as=subscriber" aria-label="YouTube" class="social-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.9-2.1c-.9-.9-1.9-.9-2.4-1C15 3.8 12 3.8 12 3.8h-.1s-3 0-6.3.3c-.5.1-1.5.1-2.4 1-.7.6-.9 2.1-.9 2.1S2 9 2 10.8v1.7c0 1.8.3 3.6.3 3.6s.2 1.5.9 2.1c.9.9 2.1.9 2.6 1 1.9.2 6.2.3 6.2.3s3 0 6.3-.3c.5-.1 1.5-.1 2.4-1 .7-.6.9-2.1.9-2.1s.3-1.8.3-3.6v-1.7c0-1.8-.3-3.6-.3-3.6ZM9.9 14.9V8.7l5.7 3.1-5.7 3.1Z"/></svg>
         </a>
-        <a href="#" aria-label="X" class="social-icon social-x">
+        <a href="https://x.com/TellCo__Europe" aria-label="X" class="social-icon social-x">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 10.3 21.8 2h-1.8l-6.6 7.2L8.2 2H2l8 11.1L2 22h1.8l7-7.7 5.6 7.7H22l-7.8-11.7Zm-2.5 2.8-.8-1.1L4.5 3.4h2.8l5.1 6.9.8 1.1 6.8 9.2h-2.8l-5.5-7.5Z"/></svg>
         </a>
       </div>
