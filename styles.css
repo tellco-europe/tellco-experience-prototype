@@ -5199,6 +5199,10 @@ button {
   line-height: 1.1;
 }
 
+.homepage-v2 #hp-final-cta-title {
+  font-size: clamp(23.76px, 2.772vw, 37.62px);
+}
+
 .homepage-v2 .hp-section-heading h2,
 .homepage-v2 .hp-section-heading h2.hp-balanced-heading {
   margin-bottom: 10px;
@@ -5275,6 +5279,10 @@ button {
 .homepage-v2 .hp-product-body > p:not(.hp-product-label):not(.hp-product-meta) {
   font-size: var(--hp-body-size);
   line-height: 1.6;
+}
+
+.homepage-v2 .hp-product-body > p:not(.hp-product-label):not(.hp-product-meta) {
+  font-size: 15px;
 }
 
 .homepage-v2 .hp-benefit-card p,
