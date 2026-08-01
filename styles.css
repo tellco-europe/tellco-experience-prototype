@@ -5313,9 +5313,30 @@ button {
   letter-spacing: 0.14em;
 }
 
+.homepage-v2 .hp-strategic-parent .hp-partner-content > h3 {
+  font-size: 20px;
+}
+
+.homepage-v2 .hp-strategic-paths-inline > h4,
+.homepage-v2 .hp-product-label {
+  font-weight: 800;
+}
+
 .homepage-v2 .hp-partner-content > h4,
 .homepage-v2 .hp-strategic-paths-inline > h4 {
   letter-spacing: 0.08em;
+}
+
+.homepage-v2 .hp-partner-content > h4 {
+  font-weight: 800;
+}
+
+.homepage-v2 .hp-partner-learn-more {
+  font-size: 15px;
+}
+
+.homepage-v2 .hp-product-link {
+  font-size: 15px;
 }
 
 .homepage-v2 .hp-partner-learn-more,
@@ -5325,6 +5346,10 @@ button {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0;
+}
+
+.homepage-v2 .hp-partner-learn-more {
+  font-size: 15px;
 }
 
 .homepage-v2 .hp-benefits-cta {
