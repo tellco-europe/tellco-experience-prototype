@@ -2277,7 +2277,7 @@ button {
   letter-spacing: 0.01em;
   font-variation-settings: "wdth" 135, "wght" 400;
   font-stretch: 135%;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.46);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   position: relative;
   top: -20px;
 }
@@ -2302,8 +2302,8 @@ button {
   align-items: stretch;
   width: clamp(240px, 22vw, 300px);
   max-width: 100%;
-  gap: 4px;
-  margin-top: 140px;
+  gap: 25px;
+  margin-top: 72px;
 }
 
 .hp-hero .hp-hero-actions .hp-hero-cta {
@@ -2313,7 +2313,7 @@ button {
 }
 
 .hp-hero .hp-hero-actions .hp-button--outline-light {
-  margin-top: 15px;
+  margin-top: 0;
 }
 
 .homepage-v2 .hp-pillars-section {
@@ -5216,7 +5216,7 @@ button {
 
 .homepage-v2 #partner-tracks > .hp-solutions-group:first-child > .hp-section-heading,
 .homepage-v2 #products > .hp-section-heading {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .homepage-v2 .hp-section-heading .hp-kicker,
