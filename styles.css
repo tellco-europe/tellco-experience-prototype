@@ -5210,6 +5210,15 @@ button {
   line-height: 1.08;
 }
 
+.homepage-v2 :is(#partner-types-title, #products > .hp-section-heading h2, #journey-heading) {
+  font-size: clamp(23.76px, 2.772vw, 37.62px) !important;
+}
+
+.homepage-v2 #partner-tracks > .hp-solutions-group:first-child > .hp-section-heading,
+.homepage-v2 #products > .hp-section-heading {
+  margin-bottom: 24px;
+}
+
 .homepage-v2 .hp-section-heading .hp-kicker,
 .homepage-v2 .hp-final-cta__eyebrow {
   margin: 0 0 10px;
