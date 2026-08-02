@@ -42,6 +42,8 @@
     .influencer-hero-subtitle{max-width:680px;margin:18px 0 0;font-family:"Georama","Roboto Condensed",Arial,sans-serif;font-size:20.4px;font-weight:400;line-height:1.35;letter-spacing:.01em;font-variation-settings:"wdth" 135,"wght" 400;font-stretch:135%}
     .influencer-hero-actions{display:flex;flex-direction:column;align-items:stretch;width:clamp(240px,22vw,300px);max-width:100%;gap:25px;margin-top:72px}
     .influencer-hero-button{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:14px 32px;border:1px solid var(--influencer-red);background:var(--influencer-red);color:#fff;font-family:"Georama","Roboto Condensed",Arial,sans-serif;font-size:13.6px;font-weight:400;line-height:1;letter-spacing:.01em;font-variation-settings:"wdth" 135,"wght" 400;text-align:center;white-space:nowrap}
+    .influencer-hero-button.is-secondary{background:transparent;border-color:rgba(255,255,255,.8);color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+    .influencer-hero-button.is-secondary:hover{background:#fff;color:#1f1f1f;text-shadow:none}
     .influencer-why-cards{padding-top:0}
     .influencer-why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
     .influencer-why-card,.influencer-benefit-card{border:1px solid #e3e3e3;background:#fff;padding:26px 24px 24px;box-shadow:0 10px 24px rgba(0,0,0,.05)}
@@ -136,7 +138,7 @@
         <p class="influencer-hero-subtitle">Your Voice. The Energy Transition.</p>
         <div class="influencer-hero-actions">
           <a class="influencer-hero-button" href="#partner-types">Explore Partner Types</a>
-          <a class="influencer-hero-button" href="#benefits">Explore Program Benefits</a>
+          <a class="influencer-hero-button is-secondary" href="#benefits">Explore Program Benefits</a>
         </div>
       </div>
     </section>

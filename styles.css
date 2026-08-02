@@ -2013,7 +2013,7 @@ button {
   z-index: 0;
   order: 2;
   color: #ededed;
-  font-size: clamp(36px, 3vw, 42px);
+  font-size: clamp(28px, 2.9vw, 32px);
   font-weight: 700;
   line-height: 1;
   user-select: none;
@@ -2285,6 +2285,7 @@ button {
 .hp-hero .hp-hero-cta {
   width: auto;
   min-width: 0;
+  min-height: 48px;
   margin-top: 30px;
   padding: 14px 32px;
   border-radius: 0;
@@ -2314,6 +2315,7 @@ button {
 
 .hp-hero .hp-hero-actions .hp-button--outline-light {
   margin-top: 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 
 .homepage-v2 .hp-pillars-section {
@@ -3282,7 +3284,7 @@ button {
 }
 
 .hp-strategic-path-tile h5 {
-  margin: 2px 0 10px;
+  margin: 2px 0 12px;
   color: #161616;
   font-size: 0.92rem;
   font-weight: 700;
