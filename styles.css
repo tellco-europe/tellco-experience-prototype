@@ -5687,7 +5687,7 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
 
 .contact-hero__copy-inner {
   width: min(620px, calc(100% - 64px));
-  margin-left: max(56px, calc((100vw - 1232px) / 2));
+  margin-left: max(32px, calc((100vw - 1280px) / 2));
   padding: 60px 0;
 }
 
