@@ -5694,18 +5694,53 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
 .contact-hero h1 {
   margin: 0 0 20px;
   color: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(38px, 4vw, 60px);
-  line-height: 1.05;
-  letter-spacing: -.025em;
+  font-family: "Georama", "Roboto Condensed", Arial, sans-serif;
+  font-size: 46px;
+  font-weight: 500;
+  font-variation-settings: "wdth" 145, "wght" 500;
+  line-height: .98;
+  letter-spacing: .035em;
 }
 
 .contact-hero p {
   max-width: 600px;
   margin: 0;
   color: #fff;
-  font-size: 18px;
-  line-height: 1.65;
+  font-family: "Georama", "Roboto Condensed", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  font-variation-settings: "wdth" 135, "wght" 400;
+  line-height: 1.35;
+  letter-spacing: .01em;
+}
+
+@media (max-width: 1199px) {
+  .contact-hero h1 {
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: .015em;
+    font-variation-settings: "wdth" 128, "wght" 500;
+  }
+
+  .contact-hero p {
+    font-size: 16px;
+    letter-spacing: .008em;
+  }
+}
+
+@media (max-width: 809px) {
+  .contact-hero h1 {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: 0;
+    font-variation-settings: "wdth" 100, "wght" 600;
+  }
+
+  .contact-hero p {
+    font-size: 16px;
+    letter-spacing: .006em;
+  }
 }
 
 .contact-hero__placeholder {
@@ -6070,10 +6105,6 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
     width: auto;
     margin: 0;
     padding: 48px 20px;
-  }
-
-  .contact-hero h1 {
-    font-size: clamp(34px, 10vw, 48px);
   }
 
   .contact-hero__placeholder {
