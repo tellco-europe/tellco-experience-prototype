@@ -5776,7 +5776,7 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
   margin: 0 auto;
   color: #20242c;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(24px, 2.2vw, 30px);
+  font-size: clamp(20px, 2vw, 26px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.015em;
@@ -5798,6 +5798,7 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
   display: block;
   width: 100%;
   max-width: 100%;
+  min-height: 3000px;
   border: 0;
 }
 
@@ -6131,7 +6132,7 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
   }
 
   .contact-hero__placeholder img {
-    object-position: 58% top;
+    object-position: 86% top;
   }
 
   .contact-workspace {
@@ -6144,6 +6145,18 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
 
   .contact-checkbox-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 611px) {
+  .contact-form-embed iframe {
+    min-height: 3400px;
+  }
+}
+
+@media (max-width: 570px) {
+  .contact-form-embed iframe {
+    min-height: 3900px;
   }
 }
 
@@ -6161,6 +6174,10 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
 
   .contact-form {
     padding-inline: 16px;
+  }
+
+  .contact-form-embed iframe {
+    min-height: 4176px;
   }
 
   .contact-form-section legend {

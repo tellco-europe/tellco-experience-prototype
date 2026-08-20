@@ -81,8 +81,7 @@
       <div class="container contact-layout">
         <h2 class="contact-form-heading">TellCoExperience XL Contact Form</h2>
         <div class="contact-form contact-form-embed" id="zf-embed-experience-xl">
-          <iframe aria-label='TellCo Experience XL Contact Form' frameborder="0" style="height:1600px;width:100%;border:none;" src='https://forms.zohopublic.com/tellcoeuropeswitzerland1/form/TellCoExperienceXLContactForm/formperma/TCnwoFKiB72WzGjkaro3fwXKUvH4zvhWsPBMAHHlXyU' >
-          </iframe>
+          <script type="text/javascript" src="https://forms.zohopublic.com/tellcoeuropeswitzerland1/form/TellCoExperienceXLContactForm/jsperma/TCnwoFKiB72WzGjkaro3fwXKUvH4zvhWsPBMAHHlXyU" id="ZFScript"></script>
         </div>
       </div>
     </section>
@@ -137,30 +136,32 @@
 
   <script src="script.js"></script>
   <script>
-    /* Zoho Forms auto-resize: the embedded form posts its height so the iframe
-       can grow with the content instead of scrolling inside a fixed box. */
-    window.addEventListener('message', function (event) {
-      const data = event.data;
-      if (typeof data !== 'string') return;
+    (function () {
+      const container = document.getElementById('zf-embed-experience-xl');
+      if (!container) return;
 
-      const parts = data.split('|');
-      if (parts.length !== 2 && parts.length !== 3) return;
-
-      const perma = parts[0];
-      const newHeight = (parseInt(parts[1], 10) + 15) + 'px';
-      const iframe = document.querySelector('#zf-embed-experience-xl iframe');
-      if (!iframe || iframe.src.indexOf('formperma') < 0 || iframe.src.indexOf(perma) < 0) return;
-
-      const scrollToForm = parts.length === 3;
-      if (scrollToForm) iframe.scrollIntoView();
-      if (iframe.style.height === newHeight) return;
-
-      if (scrollToForm) {
-        setTimeout(function () { iframe.style.height = newHeight; }, 500);
-      } else {
-        iframe.style.height = newHeight;
+      function responsiveFormHeight() {
+        if (window.matchMedia('(max-width: 560px)').matches) return 4176;
+        if (window.matchMedia('(max-width: 570px)').matches) return 3900;
+        if (window.matchMedia('(max-width: 611px)').matches) return 3400;
+        return 3000;
       }
-    }, false);
+
+      let currentHeight = responsiveFormHeight();
+      let resizeTimer;
+
+      window.addEventListener('resize', function () {
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(function () {
+          const nextHeight = responsiveFormHeight();
+          if (nextHeight === currentHeight) return;
+
+          currentHeight = nextHeight;
+          const iframe = container.querySelector('iframe');
+          if (iframe) iframe.style.height = nextHeight + 'px';
+        }, 150);
+      });
+    }());
   </script>
 </body>
 </html>
