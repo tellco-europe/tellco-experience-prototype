@@ -5769,6 +5769,18 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
   align-items: start;
 }
 
+.contact-page .contact-form-heading {
+  width: min(800px, 100%);
+  margin: 0 auto;
+  color: #20242c;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  text-align: center;
+}
+
 .contact-sidebar {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
