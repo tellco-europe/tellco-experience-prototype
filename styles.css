@@ -5759,6 +5759,7 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
 }
 
 .contact-workspace {
+  background: #fff;
   padding: 56px 0 72px;
 }
 
