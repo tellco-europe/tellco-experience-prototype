@@ -5670,18 +5670,20 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
 }
 
 .contact-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-  min-height: 360px;
-  background: #ed001c;
+  position: relative;
+  display: block;
+  min-height: 470px;
+  overflow: hidden;
+  background: #15283b;
 }
 
 .contact-hero__copy {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
-  background:
-    radial-gradient(circle at 78% 38%, rgba(255,255,255,.13) 0 1px, transparent 1.5px) 0 0 / 13px 13px,
-    linear-gradient(125deg, #c90619 0%, #ed001c 68%, #f0152c 100%);
+  min-height: 470px;
+  background: linear-gradient(90deg, rgba(10, 27, 45, .9) 0%, rgba(10, 27, 45, .72) 34%, rgba(10, 27, 45, .36) 52%, rgba(10, 27, 45, 0) 72%);
   color: #fff;
 }
 
@@ -5744,8 +5746,8 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
 }
 
 .contact-hero__placeholder {
-  min-height: 360px;
-  border-left: 1px solid rgba(255,255,255,.5);
+  position: absolute;
+  inset: 0;
   overflow: hidden;
 }
 
@@ -5753,9 +5755,8 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 360px;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 
 .contact-workspace {
@@ -6110,8 +6111,13 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
 }
 
 @media (max-width: 780px) {
-  .contact-hero {
-    grid-template-columns: 1fr;
+  .contact-hero,
+  .contact-hero__copy {
+    min-height: 360px;
+  }
+
+  .contact-hero__copy {
+    background: linear-gradient(90deg, rgba(10, 27, 45, .92) 0%, rgba(10, 27, 45, .8) 68%, rgba(10, 27, 45, .58) 100%);
   }
 
   .contact-hero__copy-inner {
@@ -6121,14 +6127,11 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
   }
 
   .contact-hero__placeholder {
-    min-height: 230px;
-    border-top: 1px solid rgba(255,255,255,.5);
-    border-left: 0;
+    border: 0;
   }
 
   .contact-hero__placeholder img {
-    min-height: 230px;
-    object-position: 58% center;
+    object-position: 58% top;
   }
 
   .contact-workspace {
