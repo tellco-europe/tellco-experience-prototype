@@ -1092,25 +1092,14 @@ button {
   }
 }
 
-@media (max-width: 980px) {
-  .container {
-    width: min(100% - 34px, var(--max));
-  }
-
+@media (max-width: 1130px) {
   .topbar-inner {
     width: calc(100% - 32px);
+    min-height: 38px;
   }
 
   .topbar-inner .social-links {
     transform: translateX(-6px);
-  }
-
-  .nav-shell .brand {
-    transform: translateX(-1px);
-  }
-
-  .topbar-inner {
-    min-height: 38px;
   }
 
   .site-header {
@@ -1119,6 +1108,10 @@ button {
 
   .nav-shell {
     min-height: 78px;
+  }
+
+  .nav-shell .brand {
+    transform: translateX(-1px);
   }
 
   .mobile-toggle {
@@ -1156,6 +1149,12 @@ button {
 
   .search-button {
     display: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .container {
+    width: min(100% - 34px, var(--max));
   }
 
   .hero {

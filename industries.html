@@ -64,12 +64,20 @@
     .industry-resource-grid a{color:var(--industries-red);font-size:15px!important;font-weight:700;line-height:1.5}
     .industry-resource-link{display:inline;justify-self:start}
     .industry-resource-link::after{content:"\00a0→"}
+    .industries-cta{padding:95px 0;background:#182534;color:#fff}
+    .industries-cta-layout{display:grid;grid-template-columns:minmax(0,1fr) 480px;gap:64px;align-items:center}
+    .industries-cta .industries-eyebrow{color:#fff;font-weight:800!important}
+    .industries-cta-heading{max-width:620px;margin:0 0 24px;color:#fff;font-size:clamp(23.76px,2.772vw,37.62px);font-weight:700;line-height:1.08;letter-spacing:-.025em}
+    .industries-cta-copy{max-width:65ch;margin:0 0 24px;color:#d9e0e7;font-size:16px;font-weight:400;line-height:1.6;letter-spacing:0}
+    .industries-cta-button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:14px 20px;background:var(--industries-red);color:#fff;font-weight:700}
+    .industries-cta-image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
     .industries-footer-social .social-icon,.industries-footer-social .social-icon svg{color:#fff;fill:#fff}
     @media(max-width:1199px){.industries-hero-content{left:calc(clamp(32px,6vw,72px) - 15px);width:calc(100% - 96px)}.industries-hero-title{font-size:38.4px;line-height:1;letter-spacing:.015em;font-variation-settings:"wdth" 128,"wght" 500}.industries-hero-subtitle{font-size:18.7px;letter-spacing:.008em}.industries-hero-button{font-size:12.75px;letter-spacing:.008em}}
     @media(max-width:1000px){.industries-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:1000px){.industry-detail-intro{grid-template-columns:1fr 400px;gap:40px}}
 @media(max-width:809px){.industries-hero-title{font-size:21.6px;font-weight:600;line-height:1.04;letter-spacing:0;font-variation-settings:"wdth" 100,"wght" 600}.industries-hero-subtitle{margin-top:12px;font-size:14.45px;letter-spacing:.006em}.industries-hero-actions{width:240px;margin-top:48px;gap:22px}.industries-hero-button{padding:13px 26px;font-size:11.9px;letter-spacing:.006em;font-variation-settings:"wdth" 125,"wght" 400}}
-@media(max-width:700px){.industries-container{width:min(100% - 32px,1180px)}.industries-hero{height:620px}.industries-hero-image{object-position:center}.industries-hero-overlay{background:rgba(4,16,31,.66)}.industries-hero-content{left:24px;top:72px;width:calc(100% - 48px);align-items:flex-start;text-align:left}.industries-grid,.industry-detail-intro,.industry-solution-list,.industry-resource-grid{grid-template-columns:1fr}.industry-detail.is-reversed .industry-detail-copy-block{order:1}.industry-detail.is-reversed .industry-detail-image{order:2}.industry-detail-image{height:280px;min-height:0;max-height:none}}
+@media(max-width:960px){.industries-cta-layout{grid-template-columns:1fr;gap:40px}.industries-cta-image{width:min(100%,720px)}}
+@media(max-width:700px){.industries-container{width:min(100% - 32px,1180px)}.industries-hero{height:620px}.industries-hero-image{object-position:center}.industries-hero-overlay{background:rgba(4,16,31,.66)}.industries-hero-content{left:24px;top:72px;width:calc(100% - 48px);align-items:flex-start;text-align:left}.industries-grid,.industry-detail-intro,.industry-solution-list,.industry-resource-grid{grid-template-columns:1fr}.industry-detail.is-reversed .industry-detail-copy-block{order:1}.industry-detail.is-reversed .industry-detail-image{order:2}.industry-detail-image{height:280px;min-height:0;max-height:none}.industries-cta{padding:72px 0}.industries-cta-layout{gap:28px}}
   </style>
 </head>
 <body>
@@ -491,8 +499,20 @@
         </div>
       </div>
     </section>
+
+    <section class="industries-cta" aria-labelledby="industries-cta-title">
+      <div class="industries-container industries-cta-layout">
+        <div>
+          <p class="industries-eyebrow">Let’s Talk About Your Project</p>
+          <h2 class="industries-cta-heading" id="industries-cta-title">Find the right solution for your industry.</h2>
+          <p class="industries-cta-copy">Tell us about your site, operating environment, challenges, and project goals. TellCo Europe can help identify the right combination of clean-energy, lighting, water, storage, cooling, and energy-efficiency solutions for your needs.</p>
+          <a class="industries-cta-button" href="contact.html">Tell Us About Your Project</a>
+        </div>
+        <img class="industries-cta-image" src="assets/industry-cta.webp" width="1200" height="800" alt="Technical and business professionals collaborating on a solar installation">
+      </div>
+    </section>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer partner-page-footer">
     <div class="container footer-main">
       <div>
         <h2>TellCo Europe</h2>
