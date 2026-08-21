@@ -37,7 +37,9 @@
     .industries-heading{max-width:760px;margin:0 0 24px;color:var(--industries-ink);font-size:clamp(23.76px,2.772vw,37.62px);font-weight:700;line-height:1.08}
     .industries-intro{max-width:960px;margin:0 0 42px;color:var(--industries-muted);font-size:16px;line-height:1.7}
     .industries-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-    .industries-card{display:flex;min-height:240px;flex-direction:column;border:1px solid var(--industries-line);border-top:5px solid var(--industries-red);background:#fff;padding:26px 24px;box-shadow:0 10px 24px rgba(0,0,0,.05);transition:transform .25s ease,box-shadow .25s ease}
+    .industries-card{display:flex;min-height:240px;flex-direction:column;overflow:hidden;border:1px solid var(--industries-line);border-top:5px solid var(--industries-red);background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.05);transition:transform .25s ease,box-shadow .25s ease}
+    .industries-card-image{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+    .industries-card-content{display:flex;min-height:240px;flex:1;flex-direction:column;padding:26px 24px}
     .industries-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.09)}
     .industries-card h3{margin:0 0 14px;color:#333;font-size:20px;font-weight:700;line-height:1.2}
     .industries-card p{margin:0;color:var(--industries-muted);font-size:15px;line-height:1.7}
@@ -142,14 +144,38 @@
           <p class="industries-intro">TellCo Europe provides integrated solar, off-grid power, energy storage, lighting, cooling, water, engineering, and project-development solutions for organizations operating across public, commercial, industrial, and mission-critical environments. Projects can be supported from feasibility and system design through financing structures, procurement, deployment, monitoring, training, and long-term maintenance.</p>
         </header>
         <div class="industries-grid">
-          <article class="industries-card"><h3>Healthcare &amp; Education</h3><p>Reliable solar, cooling, lighting, and off-grid infrastructure for clinics, hospitals, schools, and training centers that need dependable power and resilient operations.</p><a class="industries-card-link" href="#healthcare-education">Learn more →</a></article>
-          <article class="industries-card"><h3>Commercial &amp; Industrial</h3><p>Scalable solar and energy-efficiency solutions that help businesses reduce operating costs, improve performance, and support more sustainable operations.</p><a class="industries-card-link" href="#commercial-industrial">Learn more →</a></article>
-          <article class="industries-card"><h3>Water &amp; Agriculture</h3><p>Solar-powered water, irrigation, cooling, and off-grid systems that help reduce diesel dependency and improve productivity in remote and agricultural environments.</p><a class="industries-card-link" href="#water-agriculture">Learn more →</a></article>
-          <article class="industries-card"><h3>Hospitality &amp; Real Estate</h3><p>Efficient lighting, solar, cooling, and infrastructure solutions for hotels, residential developments, commercial buildings, and real estate portfolios.</p><a class="industries-card-link" href="#hospitality-real-estate">Learn more →</a></article>
-          <article class="industries-card"><h3>Sports &amp; Recreation</h3><p>Efficient lighting and infrastructure solutions for stadiums, sports fields, parks, recreation areas, and public facilities that require visibility, safety, and lower energy use.</p><a class="industries-card-link" href="#sports-recreation">Learn more →</a></article>
-          <article class="industries-card"><h3>Government &amp; Urban Infrastructure</h3><p>Sustainable infrastructure solutions for municipalities, public institutions, street lighting, smart city programs, and community energy access initiatives.</p><a class="industries-card-link" href="#government-urban-infrastructure">Learn more →</a></article>
-          <article class="industries-card"><h3>Defense &amp; Humanitarian</h3><p>Rapid-deployment solar, off-grid, cooling, water, and containerized solutions for mission-critical, remote, emergency, and humanitarian environments.</p><a class="industries-card-link" href="#defense-humanitarian">Learn more →</a></article>
-          <article class="industries-card"><h3>Mining &amp; Manufacturing</h3><p>Robust solar, storage, lighting, and energy-efficiency solutions for remote sites, industrial facilities, and high-demand operations seeking reliable and lower-cost power.</p><a class="industries-card-link" href="#mining-manufacturing">Learn more →</a></article>
+          <article class="industries-card">
+            <img class="industries-card-image" src="assets/healthcare-education-small-card.png" alt="Healthcare and education facilities powered by solar energy" loading="lazy" decoding="async">
+            <div class="industries-card-content"><h3>Healthcare &amp; Education</h3><p>Reliable solar, cooling, lighting, and off-grid infrastructure for clinics, hospitals, schools, and training centers that need dependable power and resilient operations.</p><a class="industries-card-link" href="#healthcare-education">Learn more →</a></div>
+          </article>
+          <article class="industries-card">
+            <img class="industries-card-image" src="assets/commercial-industrial-small-card.png" alt="Industrial facility with a solar-panel canopy" loading="lazy" decoding="async">
+            <div class="industries-card-content"><h3>Commercial &amp; Industrial</h3><p>Scalable solar and energy-efficiency solutions that help businesses reduce operating costs, improve performance, and support more sustainable operations.</p><a class="industries-card-link" href="#commercial-industrial">Learn more →</a></div>
+          </article>
+          <article class="industries-card">
+            <img class="industries-card-image" src="assets/water-agriculture-small-card.png" alt="Solar-powered irrigation system in an agricultural field" loading="lazy" decoding="async">
+            <div class="industries-card-content"><h3>Water &amp; Agriculture</h3><p>Solar-powered water, irrigation, cooling, and off-grid systems that help reduce diesel dependency and improve productivity in remote and agricultural environments.</p><a class="industries-card-link" href="#water-agriculture">Learn more →</a></div>
+          </article>
+          <article class="industries-card">
+            <img class="industries-card-image" src="assets/hospitality-real-state-small-card.png" alt="Hospitality property supported by solar energy" loading="lazy" decoding="async">
+            <div class="industries-card-content"><h3>Hospitality &amp; Real Estate</h3><p>Efficient lighting, solar, cooling, and infrastructure solutions for hotels, residential developments, commercial buildings, and real estate portfolios.</p><a class="industries-card-link" href="#hospitality-real-estate">Learn more →</a></div>
+          </article>
+          <article class="industries-card">
+            <img class="industries-card-image" src="assets/sports-recreation-small-card.png" alt="Sports and recreation complex with solar panels" loading="lazy" decoding="async">
+            <div class="industries-card-content"><h3>Sports &amp; Recreation</h3><p>Efficient lighting and infrastructure solutions for stadiums, sports fields, parks, recreation areas, and public facilities that require visibility, safety, and lower energy use.</p><a class="industries-card-link" href="#sports-recreation">Learn more →</a></div>
+          </article>
+          <article class="industries-card">
+            <img class="industries-card-image" src="assets/government-infrastructure-small-card.png" alt="Government infrastructure with solar power and efficient lighting" loading="lazy" decoding="async">
+            <div class="industries-card-content"><h3>Government &amp; Urban Infrastructure</h3><p>Sustainable infrastructure solutions for municipalities, public institutions, street lighting, smart city programs, and community energy access initiatives.</p><a class="industries-card-link" href="#government-urban-infrastructure">Learn more →</a></div>
+          </article>
+          <article class="industries-card">
+            <img class="industries-card-image" src="assets/defense-humanitarian-small-card.png" alt="Solar-powered equipment at a remote humanitarian operations site" loading="lazy" decoding="async">
+            <div class="industries-card-content"><h3>Defense &amp; Humanitarian</h3><p>Rapid-deployment solar, off-grid, cooling, water, and containerized solutions for mission-critical, remote, emergency, and humanitarian environments.</p><a class="industries-card-link" href="#defense-humanitarian">Learn more →</a></div>
+          </article>
+          <article class="industries-card">
+            <img class="industries-card-image" src="assets/mining-manufacturing-small-card.png" alt="Mining and manufacturing site supported by solar energy" loading="lazy" decoding="async">
+            <div class="industries-card-content"><h3>Mining &amp; Manufacturing</h3><p>Robust solar, storage, lighting, and energy-efficiency solutions for remote sites, industrial facilities, and high-demand operations seeking reliable and lower-cost power.</p><a class="industries-card-link" href="#mining-manufacturing">Learn more →</a></div>
+          </article>
         </div>
       </div>
     </section>
