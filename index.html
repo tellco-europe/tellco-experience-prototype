@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Georama:wdth,wght@100..150,100..900&amp;family=Inter:wght@400;500&amp;family=Montserrat:wght@600;700&amp;family=Poppins:wght@500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260911-about-spacing">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -84,7 +84,39 @@
       </div>
     </section>
 
-    <section class="hp-company-timeline" aria-labelledby="hp-company-timeline-title">
+    <nav class="hp-page-nav hp-page-nav--desktop" aria-label="On this page" data-page-nav>
+      <p class="hp-page-nav__title">Navigate to</p>
+      <ul class="hp-page-nav__list">
+        <li><a href="#about-tellco">About TellCo</a></li>
+        <li><a href="#group-structure">Group Structure</a></li>
+        <li><a href="#tellcoexperience">TellCoExperience</a></li>
+        <li><a href="#why-partner">Why Partner With Us</a></li>
+        <li><a href="#partner-tracks">Partner Tracks</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#partner-journey">Partner Journey</a></li>
+        <li><a href="#join-ecosystem">Join the Ecosystem</a></li>
+      </ul>
+    </nav>
+
+    <nav class="hp-page-nav hp-page-nav--compact" aria-label="Explore this page" data-page-nav data-page-nav-compact>
+      <button class="hp-page-nav__toggle" type="button" aria-expanded="false" aria-controls="hp-page-nav-compact-list" data-page-nav-toggle>
+        <span>Explore this page</span>
+        <span class="hp-page-nav__toggle-state" data-page-nav-toggle-state>Show sections</span>
+      </button>
+      <div class="hp-page-nav__compact-panel" id="hp-page-nav-compact-list" data-page-nav-panel hidden>
+        <ul class="hp-page-nav__list">
+          <li><a href="#about-tellco">About TellCo</a></li>
+          <li><a href="#group-structure">Group Structure</a></li>
+          <li><a href="#why-partner">Why Partner With Us</a></li>
+          <li><a href="#partner-tracks">Partner Tracks</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#partner-journey">Partner Journey</a></li>
+          <li><a href="#join-ecosystem">Join the Ecosystem</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hp-company-timeline" id="about-tellco" aria-labelledby="hp-company-timeline-title" data-page-section>
       <div class="container">
         <div class="hp-company-timeline__opening">
           <header class="hp-company-timeline__intro">
@@ -212,7 +244,7 @@
                 </div>
               </aside>
 
-              <div class="hp-transformation__content">
+              <div class="hp-transformation__content" id="group-structure" data-page-section>
                 <header class="hp-transformation__header">
                   <p class="hp-transformation__eyebrow">2026 <span aria-hidden="true">·</span> Group Transformation</p>
                   <h3>The TellCo Europe Group Transformation</h3>
@@ -272,7 +304,7 @@
       </div>
     </section>
 
-    <section class="hp-intro-benefits" aria-labelledby="hp-experience-welcome-title">
+    <section class="hp-intro-benefits" id="tellcoexperience" aria-labelledby="hp-experience-welcome-title" data-page-section>
       <div class="container">
         <div class="hp-experience-welcome">
           <div class="hp-experience-welcome__copy">
@@ -286,9 +318,10 @@
             <p class="hp-experience-welcome__closing"><strong>Connect. Partner. Learn. Grow. Create Impact.</strong></p>
           </div>
           <figure class="hp-experience-welcome__image">
-            <img src="assets/welcome-tellcoexperience.png" alt="Solar-powered street lights along a rural road">
+            <img src="assets/tellcoexperience-welcome-lausanne.png" alt="Lausanne battery storage and mobile energy systems in a remote setting">
           </figure>
         </div>
+        <div class="hp-why-partner" id="why-partner" data-page-section>
         <header class="hp-intro-benefits__intro">
           <h2 id="hp-intro-benefits-title">Grow with Purpose. Deliver Global Impact.</h2>
           <p>The TellCoExperience XL ecosystem empowers partners with the resources, expertise, and opportunities to lead the clean-energy transition—together.</p>
@@ -384,10 +417,11 @@
           </div>
           <a class="hp-benefits-cta__button" href="contact.html">Become a Partner</a>
         </aside>
+        </div>
       </div>
     </section>
 
-    <section class="hp-solutions" id="partner-tracks" aria-labelledby="partner-types-title">
+    <section class="hp-solutions" id="partner-tracks" aria-labelledby="partner-types-title" data-page-section>
       <div class="container hp-solutions-group">
         <header class="hp-section-heading hp-commercial-title-style">
           <p class="hp-kicker hp-partners-eyebrow">FIND YOUR FIT</p>
@@ -431,7 +465,7 @@
             </article>
           </div>
           <div class="hp-partner-row hp-partner-row--photo-first" id="affiliates" data-partner-reveal>
-            <figure class="hp-partner-photo"><img src="assets/images/partners/affiliate-referral-partners.png" alt="Affiliate and Referral Partners – TellCo product display"></figure>
+            <figure class="hp-partner-photo"><img src="assets/images/partners/affiliate-partners-energy-system-v2.png" alt="Mobile TellCo energy system beside a camper van in the Swiss Alps"></figure>
             <article class="hp-directory-card hp-partner-card hp-standard-partner">
               <div class="hp-partner-content">
                 <h3>Affiliate &amp; Referral Partners</h3>
@@ -467,7 +501,8 @@
       </div>
 
       <div class="hp-products-band">
-        <div class="container hp-solutions-group hp-products" id="products">
+        <div class="container hp-solutions-group hp-products" id="solutions" data-page-section>
+        <div class="hp-anchor-alias" id="products" aria-hidden="true"></div>
         <header class="hp-section-heading hp-commercial-title-style">
           <p class="hp-kicker">EXPLORE SOLUTIONS</p>
           <h2 class="hp-balanced-heading">Solar &amp; Energy Solutions</h2>
@@ -514,7 +549,7 @@
       </div>
     </section>
 
-    <section class="hp-section hp-journey" id="partner-journey" aria-labelledby="journey-heading">
+    <section class="hp-section hp-journey" id="partner-journey" aria-labelledby="journey-heading" data-page-section>
       <div class="container">
         <header class="hp-section-heading hp-commercial-title-style">
           <p class="hp-kicker hp-matched-eyebrow">PARTNER JOURNEY</p>
@@ -550,7 +585,7 @@
       </div>
     </section>
 
-    <section class="hp-final-cta" aria-labelledby="hp-final-cta-title">
+    <section class="hp-final-cta" id="join-ecosystem" aria-labelledby="hp-final-cta-title" data-page-section>
       <div class="hp-final-cta__inner">
         <div class="hp-final-cta__content">
           <p class="hp-final-cta__eyebrow">JOIN THE ECOSYSTEM</p>
@@ -636,6 +671,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260911-page-nav-6"></script>
 </body>
 </html>

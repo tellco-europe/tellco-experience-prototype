@@ -64,6 +64,102 @@ if (nav) {
   window.addEventListener('resize', updateActiveLink);
 }
 
+const pageSectionNavs = Array.from(document.querySelectorAll('[data-page-nav]'));
+
+if (pageSectionNavs.length) {
+  const pageSectionLinks = Array.from(document.querySelectorAll('[data-page-nav] a[href^="#"]'));
+  const pageSections = Array.from(document.querySelectorAll('[data-page-section]'));
+  const compactPageNav = document.querySelector('[data-page-nav-compact]');
+  const compactPageNavToggle = document.querySelector('[data-page-nav-toggle]');
+  const compactPageNavPanel = document.querySelector('[data-page-nav-panel]');
+  const compactPageNavToggleState = document.querySelector('[data-page-nav-toggle-state]');
+
+  const setPageSectionActive = (sectionId) => {
+    pageSectionLinks.forEach((link) => {
+      const isActive = link.getAttribute('href') === `#${sectionId}`;
+      if (isActive) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  const closeCompactPageNav = () => {
+    if (!compactPageNavToggle || !compactPageNavPanel) return;
+    compactPageNavToggle.setAttribute('aria-expanded', 'false');
+    compactPageNavPanel.hidden = true;
+    if (compactPageNavToggleState) compactPageNavToggleState.textContent = 'Show sections';
+  };
+
+  if (compactPageNavToggle && compactPageNavPanel) {
+    compactPageNavToggle.addEventListener('click', () => {
+      const willOpen = compactPageNavToggle.getAttribute('aria-expanded') !== 'true';
+      compactPageNavToggle.setAttribute('aria-expanded', String(willOpen));
+      compactPageNavPanel.hidden = !willOpen;
+      if (compactPageNavToggleState) {
+        compactPageNavToggleState.textContent = willOpen ? 'Hide sections' : 'Show sections';
+      }
+    });
+  }
+
+  pageSectionLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const sectionId = link.hash.slice(1);
+      const targetSection = document.getElementById(sectionId);
+      if (compactPageNav && compactPageNav.contains(link)) closeCompactPageNav();
+      if (targetSection) {
+        event.preventDefault();
+        const targetTop = targetSection.getBoundingClientRect().top
+          + window.scrollY
+          - (header ? header.offsetHeight : 0)
+          - 24;
+        window.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        });
+        window.history.pushState(null, '', `#${sectionId}`);
+      }
+      setPageSectionActive(sectionId);
+    });
+  });
+
+  if ('IntersectionObserver' in window && pageSections.length) {
+    const visiblePageSections = new Set();
+    const observerTop = (header ? header.offsetHeight : 0) + 24;
+
+    const updateObservedPageSection = () => {
+      const visible = pageSections.filter((section) => visiblePageSections.has(section));
+      if (!visible.length) return;
+
+      const passedTop = visible
+        .filter((section) => section.getBoundingClientRect().top <= observerTop + 2)
+        .sort((a, b) => b.getBoundingClientRect().top - a.getBoundingClientRect().top);
+      const activeSection = passedTop[0] || visible.sort(
+        (a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top
+      )[0];
+
+      if (activeSection && activeSection.id) setPageSectionActive(activeSection.id);
+    };
+
+    const pageSectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visiblePageSections.add(entry.target);
+        } else {
+          visiblePageSections.delete(entry.target);
+        }
+      });
+      updateObservedPageSection();
+    }, {
+      rootMargin: `-${observerTop}px 0px -65% 0px`,
+      threshold: 0
+    });
+
+    pageSections.forEach((section) => pageSectionObserver.observe(section));
+  }
+}
+
 const partnerRevealItems = document.querySelectorAll('[data-partner-reveal]');
 
 if (partnerRevealItems.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
