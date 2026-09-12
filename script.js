@@ -73,6 +73,7 @@ if (pageSectionNavs.length) {
   const compactPageNavToggle = document.querySelector('[data-page-nav-toggle]');
   const compactPageNavPanel = document.querySelector('[data-page-nav-panel]');
   const compactPageNavToggleState = document.querySelector('[data-page-nav-toggle-state]');
+  let pageSectionUpdateFrame = null;
 
   const setPageSectionActive = (sectionId) => {
     pageSectionLinks.forEach((link) => {
@@ -124,39 +125,25 @@ if (pageSectionNavs.length) {
     });
   });
 
-  if ('IntersectionObserver' in window && pageSections.length) {
-    const visiblePageSections = new Set();
+  if (pageSections.length) {
     const observerTop = (header ? header.offsetHeight : 0) + 24;
 
-    const updateObservedPageSection = () => {
-      const visible = pageSections.filter((section) => visiblePageSections.has(section));
-      if (!visible.length) return;
-
-      const passedTop = visible
-        .filter((section) => section.getBoundingClientRect().top <= observerTop + 2)
-        .sort((a, b) => b.getBoundingClientRect().top - a.getBoundingClientRect().top);
-      const activeSection = passedTop[0] || visible.sort(
-        (a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top
-      )[0];
-
+    const updateActivePageSection = () => {
+      pageSectionUpdateFrame = null;
+      const activeSection = pageSections.reduce((currentSection, section) => (
+        section.getBoundingClientRect().top <= observerTop + 4 ? section : currentSection
+      ), pageSections[0]);
       if (activeSection && activeSection.id) setPageSectionActive(activeSection.id);
     };
 
-    const pageSectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          visiblePageSections.add(entry.target);
-        } else {
-          visiblePageSections.delete(entry.target);
-        }
-      });
-      updateObservedPageSection();
-    }, {
-      rootMargin: `-${observerTop}px 0px -65% 0px`,
-      threshold: 0
-    });
+    const requestPageSectionUpdate = () => {
+      if (pageSectionUpdateFrame !== null) return;
+      pageSectionUpdateFrame = window.requestAnimationFrame(updateActivePageSection);
+    };
 
-    pageSections.forEach((section) => pageSectionObserver.observe(section));
+    window.addEventListener('scroll', requestPageSectionUpdate, { passive: true });
+    window.addEventListener('resize', requestPageSectionUpdate);
+    updateActivePageSection();
   }
 }
 
