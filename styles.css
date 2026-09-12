@@ -7060,6 +7060,10 @@ main.site-content-typography > section:not(.hero-shell):not(.influencer-hero):no
     border-left: 1px solid #d8dde4;
   }
 
+  .hp-page-nav--desktop .hp-page-nav__title {
+    margin-left: 12px;
+  }
+
   .hp-page-nav--desktop .hp-page-nav__list li + li {
     margin-top: 2px;
   }
